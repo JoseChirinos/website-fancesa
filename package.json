@@ -1,0 +1,12 @@
+{
+  "name": "web_fancesa_official",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de fancesa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --server \".\" --files \"**/*.*\" --no-inject-changes"
+  },
+  "author": "Jose Chirinos",
+  "license": "ISC"
+}

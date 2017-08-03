@@ -1,0 +1,21 @@
+.bg1{
+    background: red;
+    min-height: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.bg2{
+    background: yellow;
+    min-height: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.bg3{
+    background: green;
+    min-height: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.bgg{
+    height: 550px;
+}

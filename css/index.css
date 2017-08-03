@@ -1,0 +1,527 @@
+/*menu*/
+body{
+    font-family: 'Passion One';
+}
+.menu{
+    position: fixed;
+    width:100%;
+    background: #000;
+    margin: 0;
+    left:0;
+    z-index: 10;
+}
+.menu-top, .menu-bottom{
+    padding-top:7px;
+    padding-bottom:7px;
+}
+.menu-top{
+    background: #212425;
+}
+.menu-top img{
+    width: 100px;
+    height: 19px;
+}
+.menu-bottom ul{
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+.menu-bottom ul li:first-child{
+    margin-left: 0px;
+}
+.menu-bottom ul li{
+    display: inline-block;
+    margin: 0;
+    padding: 4px 15px;
+    list-style: none;
+    margin-left: -4px;
+    cursor: pointer;
+}
+.menu-bottom a{
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 15px;
+    text-decoration: none;
+}
+.bar {
+    position: absolute;
+    top: 40.3px;
+    height: 3px;
+    background: #be0411;
+    transform: translate3d(0,0,0);
+    transition: all .3s;
+    transition-timing-function: ease-out;
+}
+.space{
+    height: 76px;
+    background: #000000;
+}
+/*header*/
+.header{
+    width: 100%;
+    height: 450px;
+    background: url(../images/city/santa-cruz.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+.header-city{
+    position: relative;
+    height: 450px;
+}
+.city{
+    position: absolute;
+    width: 550px;
+    height: 450px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.box{
+    position: absolute;
+    width: 350px;
+    height: 400px;
+}
+#chuquiBox{
+    background: url(../images/chuquisaca.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: 100px;
+    bottom: -400px;
+    opacity: 1;
+}
+#santaBox{
+    background: url(../images/santa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: 100px;
+    top: -400px;
+    opacity: 1;
+}
+#potosiBox{
+    background: url(../images/potosi.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: -100%;
+    width: 100%;
+    bottom: 0;
+    opacity: 1;
+}
+#cochaBox{
+    background: url(../images/cocha.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: 100px;
+    transform: rotateY(90deg);
+    bottom: 0px;
+    opacity: 0;
+}
+#tarijaBox{
+    background: url(../images/tarija.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: 100px;
+    bottom: -400px;
+    transform: rotateY(360deg);
+    opacity: 1;
+}
+#oruroBox{
+    background: url(../images/oruro.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    left: 100px;
+    transform: rotateY(0deg);
+    bottom: -400px;
+    opacity: 1;
+}
+
+.header h2{
+    position: relative;
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: 100;
+    line-height: 1.2;
+    top: 70px;
+    user-select: none;
+    cursor: default;
+}
+/*section a*/
+.sNa{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+.sNa-detail{
+    user-select: none;
+    position: absolute;
+    right: 100px;
+    height: 440px;
+}
+.sNa-detail h2{
+    font-weight: 100;
+    font-size: 3em;
+    text-align: right;
+    line-height: 1;
+}
+/*mapa*/
+#map{
+    position: relative;
+    height: 440px;
+}
+#map svg:not(:root) {
+    overflow: hidden;
+}
+#map svg{
+	width: 390px;
+    height: 450px;
+    position: relative;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+#map svg path{
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+.maper{
+    position: absolute;
+    width: 390px;
+    height: 445px;
+    /*background: red;*/
+}
+/*
+#map:hover svg{
+	width: 450px;
+    height: 450px;
+}
+*/
+
+/*departamentos*/
+#deps{
+    font-size: 2em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.pd:hover{
+    fill: #0DAA41;
+    fill-opacity: 0.7;
+}
+.bn:hover{
+    fill: #00B830;
+    fill-opacity: 0.7;
+}
+.sc:hover{
+    fill: #2DC84D;
+    fill-opacity: 0.7;
+}
+.cb:hover{
+    fill: #EF2B2D;
+    fill-opacity: 0.7;
+}
+.ch:hover{
+    fill: #C42425;
+    fill-opacity: 0.7;
+}
+.tj:hover{
+    fill: #A11E1F;
+    fill-opacity: 0.7;
+}
+.lp:hover{
+    fill: #EEAC37;
+    fill-opacity: 0.7;
+}
+.or:hover{
+    fill: #EE921A;
+    fill-opacity: 0.7;
+}
+.pt:hover{
+    fill: #EA6F23;
+    fill-opacity: 0.7;
+}
+.dhover{
+    fill: #be0411 !important;
+    fill-opacity: 0.7 !important;
+    stroke-width: 2px !important;
+    stroke: #fff !important;
+}
+#deps li{
+        height: 40px;
+}
+#deps li a{
+    display: block;
+    text-decoration: none;
+    color: #cecccc;
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+#deps li a:hover{
+	font-size: 1.2em;
+	color: #be0411;
+}
+.dep-def li:first-child a{
+    font-size: 1.2em;
+	color: #be0411!important;
+}
+#depbig h1{
+	display: none;
+    font-size: 35px;
+    text-align: right;
+    color: #be0411;
+    margin-top: 120px;
+}
+/*section b*/
+.sNb{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: url(../images/bg-pointer-black.jpg);
+    background-size: cover;
+}
+.sNb-detail a{
+    display: inline-block;
+    position: relative;
+    background: rgba(39, 31, 31, 0.5);
+    color: #FFFFFF;
+    padding: 4px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 15px;
+    text-decoration: none;
+}
+#pointer{
+    position: relative;
+    margin: 0 auto;
+    width:50px;
+    height: 70px;
+    background: url(../images/pointer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+/*section c*/
+.sNc{
+    background: #000000;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    overflow:hidden;
+}
+.sNc .pack-effect{
+    text-align: right;
+}
+.pack-fancesa, .pack-fancesa img{
+    width: 250px;
+    height: 390px;
+}
+.pack-fancesa{
+    display: inline-block;
+    position: relative;
+    right: 100px;
+    top: 50px;
+    -webkit-transition: .0001s;
+    -moz-transition:.0001s;
+    -ms-transition:.0001s;
+    -o-transition:.0001s;
+    transition: .0001s;
+}
+.sNc-detail{
+    user-select: none;
+    height: 390px;
+    display: table;
+}
+.sNc-detail h2{
+    color: #be0411;
+    font-size: 3em;
+    font-weight: 100;
+    line-height: 1;
+}
+.sNc-detail a{
+    color: #be0411;
+    border: 2px solid #be0411;
+}
+.sNc-detail:only-child{
+    display: table-cell;
+	vertical-align: middle;
+}
+.sNc-detail a:hover{
+    background: rgba(190, 4, 17, 0.37)!important;
+}
+/* button */
+.btn:hover{
+    text-decoration: none;
+}
+.btn:hover .icon{
+    margin-left: 15px;
+}
+.btn{
+    display: inline-block;
+    position: relative;
+    width: 230px;
+    padding: 4px 36px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+.btn-text{
+    display: inline-block;
+}
+.icon{
+    padding: 0px 12px;
+    margin-left: 10px;
+    -webkit-transition: .3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition: .3s;
+}
+.icon-right-red{
+    background: url(../images/angle-right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.icon-right-white{
+    background: url(../images/angle-right-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.icon-right-black{
+    background: url(../images/angle-right-black.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sNd{
+    background: url(../images/bg-calendario.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+}
+.sNd h2{
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 100;
+}
+.sNd-detail{
+    user-select: none;
+    height: 550px;
+    width: 380px;
+    position: absolute;
+    right: 100px;
+}
+.sNd-detail aside{
+    height: 550px;
+    width: 500px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.sNd-detail h2{
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 100;
+    line-height: 0.1;
+}
+.sNd-detail img{
+    width: 150px;
+    height: 29px;
+}
+.sNd-detail p{
+    font-size: 2em;
+    color: #fff;
+    font-weight: 100;
+    line-height: 1.3;
+}
+.sNd-detail a{
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+/*section e*/
+.sNe{
+    display: none;
+}
+.sNf{
+    position: relative;
+    background: url(../images/bg-nosotros.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 550px;
+}
+.sNf::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.60);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.sNf-detail{
+    position: relative;
+    width: 550px;
+    margin: 0 auto;
+}
+.sNf-detail aside{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 550px;
+    z-index: 2;
+}
+.sNf-detail h2{
+    position: relative;
+    color: #fff;
+    font-size: 4em;
+    font-weight: 100;
+}
+.sNf-detail h2::after{
+    content: '';
+    width: 125px;
+    height: 4px;
+    background: #be0411;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    top: 70px;
+}
+.sNf-detail p{
+    color: #fff;
+    font-size: 2em;
+    font-weight: 100;
+    line-height: 1.3;
+}
+.sNf-detail a{
+    display: block;
+    color: #fff;
+    background: #be0411;
+    margin: 0 auto;
+}
+.btn-white{
+    background: #fff!important;
+    color: #000!important;
+    width: 270px;
+    margin-bottom: 30px!important;
+}
