@@ -3,23 +3,23 @@ body{
     font-family: 'Passion One';
 }
 .menu{
-    position: fixed;
+    position: absolute;
     width:100%;
-    background: #000;
     margin: 0;
     left:0;
     z-index: 10;
 }
-.menu-top, .menu-bottom{
-    padding-top:7px;
-    padding-bottom:7px;
-}
 .menu-top{
-    background: #212425;
+    padding-top:25px;
+    padding-bottom:25px;
 }
 .menu-top img{
-    width: 100px;
-    height: 19px;
+    width: 140px;
+    height: 27px;
+}
+.menu-bottom{
+    padding-top:7px;
+    padding-bottom:7px;
 }
 .menu-bottom ul{
     display: inline-block;
@@ -33,7 +33,9 @@ body{
 .menu-bottom ul li{
     display: inline-block;
     margin: 0;
-    padding: 4px 15px;
+    padding: 0px 20px;
+    height: 34px;
+    line-height: 34px;
     list-style: none;
     margin-left: -4px;
     cursor: pointer;
@@ -44,120 +46,88 @@ body{
     font-size: 15px;
     text-decoration: none;
 }
+.menu-bottom ul li > ul{
+    display: none;
+    background: rgba(190, 4, 17, 0.96);
+    position: absolute;
+    top: 40.2px;
+    padding: 10px;
+    left: 0;
+    text-align: left;
+    z-index: 5;
+}
+.menu-bottom ul li:hover ul{
+    display: block;
+}
+.menu-bottom ul li > ul li{
+    display: block;
+}
+#logo-nav{
+    display: none;
+    width: 80px;
+    margin-right: 50px;
+}
+#logo-nav img{
+    width: 80px;
+    margin-right: 100px;
+}
 .bar {
     position: absolute;
-    top: 40.3px;
+    top: 37.2px;
     height: 3px;
     background: #be0411;
     transform: translate3d(0,0,0);
     transition: all .3s;
     transition-timing-function: ease-out;
+    z-index: -1;
 }
 .space{
     height: 76px;
-    background: #000000;
 }
 /*header*/
 .header{
-    width: 100%;
-    height: 450px;
-    background: url(../images/city/santa-cruz.jpg);
-    background-size: cover;
-    background-position: bottom;
-}
-.header-city{
     position: relative;
-    height: 450px;
-}
-.city{
-    position: absolute;
-    width: 550px;
-    height: 450px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 700px;
+    background: url(../images/pack-presentation-red.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
     overflow: hidden;
 }
-.box{
-    position: absolute;
-    width: 350px;
-    height: 400px;
+.pack-header{
+    position: relative;
 }
-#chuquiBox{
-    background: url(../images/chuquisaca.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: 100px;
-    bottom: -400px;
-    opacity: 1;
+.pack-fancesa-top, .pack-fancesa-top img{
+    width: 400px;
+    height: 625px;
 }
-#santaBox{
-    background: url(../images/santa.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: 100px;
-    top: -400px;
-    opacity: 1;
+.pack-fancesa-top{
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    -webkit-transition: .0001s easeOutSine;
+    -moz-transition:.0001s easeOutSine;
+    -ms-transition:.0001s easeOutSine;
+    -o-transition:.0001s easeOutSine;
+    transition: .0001s easeOutSine;
 }
-#potosiBox{
-    background: url(../images/potosi.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: -100%;
-    width: 100%;
-    bottom: 0;
-    opacity: 1;
-}
-#cochaBox{
-    background: url(../images/cocha.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: 100px;
-    transform: rotateY(90deg);
-    bottom: 0px;
-    opacity: 0;
-}
-#tarijaBox{
-    background: url(../images/tarija.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: 100px;
-    bottom: -400px;
-    transform: rotateY(360deg);
-    opacity: 1;
-}
-#oruroBox{
-    background: url(../images/oruro.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    left: 100px;
-    transform: rotateY(0deg);
-    bottom: -400px;
-    opacity: 1;
-}
-
 .header h2{
     position: relative;
     color: #fff;
     font-size: 3.5em;
     font-weight: 100;
     line-height: 1.2;
-    top: 70px;
+    top: 50px;
     user-select: none;
     cursor: default;
 }
 /*section a*/
 .sNa{
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     overflow: hidden;
+    background: #f6f6f6;
 }
 .sNa-detail{
     user-select: none;
@@ -197,18 +167,15 @@ body{
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
-.maper{
-    position: absolute;
-    width: 390px;
-    height: 445px;
-    /*background: red;*/
+.land:hover{
+    fill: #a2a1a1;
 }
-/*
-#map:hover svg{
-	width: 450px;
-    height: 450px;
+.dhover{
+    fill: #be0411 !important;
+    fill-opacity: 0.7 !important;
+    stroke-width: 2px !important;
+    stroke: #fff !important;
 }
-*/
 
 /*departamentos*/
 #deps{
@@ -217,48 +184,6 @@ body{
     padding: 0;
     margin: 0;
     text-align: right;
-}
-.pd:hover{
-    fill: #0DAA41;
-    fill-opacity: 0.7;
-}
-.bn:hover{
-    fill: #00B830;
-    fill-opacity: 0.7;
-}
-.sc:hover{
-    fill: #2DC84D;
-    fill-opacity: 0.7;
-}
-.cb:hover{
-    fill: #EF2B2D;
-    fill-opacity: 0.7;
-}
-.ch:hover{
-    fill: #C42425;
-    fill-opacity: 0.7;
-}
-.tj:hover{
-    fill: #A11E1F;
-    fill-opacity: 0.7;
-}
-.lp:hover{
-    fill: #EEAC37;
-    fill-opacity: 0.7;
-}
-.or:hover{
-    fill: #EE921A;
-    fill-opacity: 0.7;
-}
-.pt:hover{
-    fill: #EA6F23;
-    fill-opacity: 0.7;
-}
-.dhover{
-    fill: #be0411 !important;
-    fill-opacity: 0.7 !important;
-    stroke-width: 2px !important;
-    stroke: #fff !important;
 }
 #deps li{
         height: 40px;
@@ -290,10 +215,9 @@ body{
 }
 /*section b*/
 .sNb{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: url(../images/bg-pointer-black.jpg);
-    background-size: cover;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    background: #f6f6f6;
 }
 .sNb-detail a{
     display: inline-block;
@@ -310,8 +234,8 @@ body{
 #pointer{
     position: relative;
     margin: 0 auto;
-    width:50px;
-    height: 70px;
+    width: 34px;
+    height: 50px;
     background: url(../images/pointer.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -320,10 +244,13 @@ body{
 }
 /*section c*/
 .sNc{
-    background: #000000;
     padding-top: 70px;
     padding-bottom: 70px;
     overflow:hidden;
+    background: url(../images/bg-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .sNc .pack-effect{
     text-align: right;
@@ -349,14 +276,14 @@ body{
     display: table;
 }
 .sNc-detail h2{
-    color: #be0411;
+    color: #f8f0f0;;
     font-size: 3em;
     font-weight: 100;
     line-height: 1;
 }
 .sNc-detail a{
-    color: #be0411;
-    border: 2px solid #be0411;
+    color: #f8f0f0;
+    border: 2px solid #f8f0f0;
 }
 .sNc-detail:only-child{
     display: table-cell;
@@ -448,7 +375,7 @@ body{
 }
 .sNd-detail p{
     font-size: 2em;
-    color: #fff;
+    color: #fcd9d9;
     font-weight: 100;
     line-height: 1.3;
 }
