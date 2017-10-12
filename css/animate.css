@@ -1027,13 +1027,14 @@
   }
 
   50%, 55% {
-    opacity: 1;
+    /*opacity: 1;*/
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
 
   to {
-    opacity: 0;
+    display: none;
+    /*opacity: 0;*/
     -webkit-transform: scale3d(.3, .3, .3);
     transform: scale3d(.3, .3, .3);
   }

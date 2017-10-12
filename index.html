@@ -2,14 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fancesa - Oficial</title>
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="images/favicon-official.ico" />
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Construye con el mejor cemento de Bolivia, la calidad y el precio nos distinguen."/>
     <!-- Styles for production
-        <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Passion+One" rel="stylesheet">
     -->
     
     <!-- Styles -->
@@ -17,15 +20,37 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/commom.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/menu.css">
 
-    <!-- *** ONLY TEST *** -->
-    <link rel="stylesheet" href="css/test.css">
+    <!-------------------------------------------------- 
+        effects only for test
+    ------------------------------------------------------>
+    <link rel="stylesheet" href="js/onlytest/flickity.css" media="screen">
 </head>
 <body>
+    <!-- LoadBox -->
+    <div class="loader">
+        <img class="loader-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAABYCAYAAAC9BZ+zAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDA5MjdCMTg3QTE3MTFFN0I1RjZEQTQ4QUIwRjc5Q0IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDA5MjdCMTk3QTE3MTFFN0I1RjZEQTQ4QUIwRjc5Q0IiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEMDkyN0IxNjdBMTcxMUU3QjVGNkRBNDhBQjBGNzlDQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMDkyN0IxNzdBMTcxMUU3QjVGNkRBNDhBQjBGNzlDQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po/xDlMAABG7SURBVHja7J0JmBTFFcdfzyywu0AEkUOJyCECiqgQlGASVPw0GkXRGMUbMd5GI2o0xmiMIcYbjIpGEU08440J4gWK4RMEFBMFRYgSERVQYGUvdmdSf/ttMuzOzPZR3V21+37f975d2Jnq6q6qf72qrnrlZLNZEgRBEOIjJY9AEARBhFcQBEGEVxAEQRDhFQRBEOEVBEEQRHgFQRBEeAVBEAQRXkEQBBFeQRAEEV5BEARBhFcQBMFmSor+NZulVTdOoZrP1pCTKvGa5rbK+ivrray7svbKnBg6kLnKXo0ofYfvow2eirJaZZW+UlDP0kmlqMcpx1NJ585S8wTBDDrk6KD/dl24wSvRcKhNt+3IKWmqnU7RIDmZDM3rM5gqVi1VylbUOd5R2eHKDlM2lAU3bm5SdrGmtPoq20fZ3soGKdtB2TbK2rLwVin7StlHyt5R9oayhcq+bC7htu275i2IiCsW7mFXZbso68H3gkzUcJ4/UbZU2bvKPlRWb0mjQXnsnHN/vbisOvHf0gHSfFrZNSHy1I7bw478nNtovud0AUfmea6TtoAy6srWgZ9TKf/egcvvPmUbNF6zV067Rn3pyflox+26mq/3sbJ/crt+U9la31dS2ol2/p35s6msfz+fHi9KuWNH9aEySpWU5vszPNsLlY1TlrQbVx3y+12UjVV2nLIR7OE2xzBlR/Pva5S9rOxBZbO4IJtQX1lV4C9aKVf2Q87bvsp28vg99PjLOP+PK1tgYINFPdtf2Y+UfY87SZ092b8Cii2e91HKvsvPu23Mz2U4d/6msr2y7ysbpWwvZX14dFzsOT2rQXi/pexI1qiR/O/m2Iu/Qyy6c7hd/01ZnUfl/WaWIKsE2P9UQ3FP41Jll3i8EZNB4Z+r7EzuAcNUrBPZ0FPeqOyJJkOMdDrqe/mpsgncKQYp1yFsl3CFm8xeYNKgkxvPDaJnhNep9fHZEs7TBcp2S/j5ZAxsW/DMD1V2irID2LnxSlXIe+rAbfoc7pyDAo/8GLa3lN2i7C/UnPuUcZTHW7itB3m5hgb9krLftgDRHcde3TWaG/MI9hj/rmxwTPcygT2e6wKKbj72U/YUl/eIhMoIXsqTyuZzB9nTkLoDr2i2srsNEF0TwWhrnrLnWLS6xHjtMTnOT1/NZf4Al/vwMAmlAjSCOTxksBl0GNOVPaSsX4TXOUTZP5SdEeE1MG/1jLJ7ePgWBaPJfXF5FQWbNw16X9PIfWk6Nsbreu2w5/BUh7A1u7PD8XgCnXWZsj9ye4iyM8R0yWvKJsYhvCO599rB8ooBoX2Fhz9xifxdym4l/cv3RrEwjYnhPjANcTVX6u0ivtap7OGOJ/OWPJ7BHbbto70oOIsdjUMSuDZ06XkeFcVBKXvU0yjAfL7XSt2fh3u2r4NCL4gXYMMSuDbmAe/X6LmNZc+iV8z3gZdaL5D71l43Hcl9kw3rYejwearoaxMw132Hsju5DOOmN9fJHyRw7fHs3ZfpE17HgUHZMZnc3fLKgWE43krulGAe8OLtbg3pwMN9lNzVC0mwF4v+9hrTxFzcS+ztmgiW4t1L0a9Jtw0IzmPKzk7o+t15JJ7kPPvhrJGenarmhbc+cwW5695sBr3wEwmLbgOnKbsyxPdRFlja0ibh+8BLw79qEv89eCRiaj2D2N5O7rpc4f+gDj7Co68kaMfXN+Hl5lE89RBeeNfNmDlw84plF6fS7WyvILexl2YKv1F2UIDvYW4V84sdDLkPrBGerEF0Z/Jw0VTQqA4UnW3CVIrn/UIhJpG78sYUsKfh2NDC+++rJv0yU1tT+o3nay8/pvhepPnxoO4M4EHhBV0/w+7ldHKXCwWdXnhW85SFbtBGLhWNbcJFPHpLitGcB9OY4qU+FxTeDXPm9q14561j0ulymyvHNn7c/5iB6Fzu4/N4qXWCofdyM7mbN/zQkacqehleh7AkyvapNt1g2+3vE7w+huC3GPpsupG7xyGY8H4yddpx9fVVtnu7WFqyk8H5O4+8rb1ty8MqU/l2AO8Dc6ZDLahDR4rObkUpTzG0TTAPGMHubvAzQv728C282Zoap2L+wjFpKrW5gnRiYTMZxIM438PnsIxpiOH3gq2ZXle+nKrsJAvqELyOUaK1W4H6umfCwj/R8GdU0lwe8wrvxnkLelWuWjnESbe1uYJArLa3IJ+YPujcTOM/34L76Eze5tLhHd9oSR3CNtedRWv/B9rTZQnnAZszdrHgWeGF7I6+hLfyw5WDM5nqMsunGU60JJ/dqPhOHwzHR1j0zJsLvDSJ4t23H4buZP+mIZ1gE9C2MV2rrIA+2dKuMZodW8wlbkLF4rcHWLhOPDfDvS0SK3AEucvE8nEk2VMYg3kYWig84QiLGk6DFy8bJlywlPH0CNJFBLIl5Eb+QlzohkDkCL+4Lk8e9rNIksY4qdQUz8KbqanpaXklwfpSmyaoEcO1nPJHv7dp/ajD+S0kvL+yQMhyF62nLXr2Ued1nOaRCuJn38v2NnmLUj08Ro87NNls3bC6TRUIK7nWk/CS40SxQ2cjuXvwXyT31IOsxkbocG+Z61lFkf/PuGH2Ir3BWzDv2Z97/lwwpxbFrpzVyr5gj6635rRHFpkyiSN4Chr0R3x/fo9xQZkuyvl3ZQT5W07uKR91Bep/PfkLld+QxvoInymey8ka00Mo1nMaPWsvRLGsr4LcQwyghZiT1bMjNJWiui2bOlUufX+3jsP2nONNePX3novJfYm0LKbOZleNaSHP13GHsY4Lph9XRLz00vEGEo1nQB7hhRjrDDqCY4qwXRkVYRO581DD2RMdrekaA/mZNA4ofgZFG2kMQVIeJjda2yplWzSkuY6FXMfoCYKKN92I1VFl2QhyCOlb+od4KTjl5esA39UZ2xqd8x/IjTnyOWsenJDjlf2cNMVBqXjn3UHd3fbmSXh1gt7kiEYeaZSUsAepg1k8xMo9y6qWBQznuyEMHTYBdNJwrT4e/y8oCNeHM/Fyj1LZzCL8OrlBPo7VcB1EFevKXnUD8KyPiqi853Jn8mpEdXeNpnJA5z2Z7OQwTZ3mohCiS6Rvsw0CtGO35aeN/v89dkIQdAenroQODLZl/fq+hYYQUXN9jKJL7CHqiJW6gitJsQMEEU3rLE35zlfIumIfQ2AnUOHzq+r4PlZruFYHaroSYDSLsW6uJfdImahOl4a3+7aGdCpJT1S6pDhIQxo1POoJKroYaeqY3/2sgOjm8gaPaEMd+uooH7Bq+YpulOdA4aiFFw97RsyVpB1t/YIkjIfi5aC9R9lj1CFYjdE1147IX+8385kNfC86pk065vGYdHMue7p1EdenmRrS2Eh2nQDc2CHYQ0M6iA642IB2PbkZ0W3gBZ6GCNEQUlS7dl15EsKLCf91MVeUFIV/abeZpxG88rSmfOebNtHBEs2fa46SRg1mX81lDMG9I6b6NIOFMwzbkfkxKQoxRNMI8iED2jU82Gd9fP7J0F5IOp1KYqoBa/SyFla2tT47jJWG30+Nx8/VRnBtvIjUOVc9i6cY4gJD0wdDpoFh8q8tFd6RGtKAtz/fgHtBPr7w8fmPovQOhfw9o58Oo87w+3E0f84PeBOta5UM5lyTCAV4A7nLjsLwE3KDdg/hUUBJQGtD8a4v1nGw7aIERr6F2nXGhHZdQkKcwtYaGaQxLRwx814C9wDP52plN4VMB6tGsLrjP1R4Ha8XZwlLsi6I4b6xYULHAQKzpV2L8ArxonOaYVqC94Eg9PtT+BeF8Fj7hkwjrvliHAqrYyXBq9IMZKpBiJdumtLBpogFCd4HhqiIvrbYgGe6Jabr7KchDSxRXCLNQIRXiJdOmtLBppWkd3x9yR7v/FZSdjqOS8ez+lqagQivEC+6Tko1ZeUIdrJhQ8GfW3i5YfOOjvW7r0gTSEZ4bVxOhjzX+Ph8rVSlguh6QbHBoHtCnAvsbDrFZz2xCQSkCXuaNVYRzDWsXVf7+HxkZVsSw41WWVjp4KUNZUF1PFSu/qKvBdE1H2laiEZ4hIiV3KaFltsBmkYpywy6J5QVVmls9NCuMac/KKqMRC282LHzJDe+oJ4PvocF84tiLCCEh1uYgFfXEtmkKZ3uBt0TGuQzLbjDxUhYx/rdeYaNBrv49MCtXU6G4zsO15DO9JiFV8RUH7oWzg805H56k7uHv3cLLjMsd9MRWtXE9btGtGtbXq7VkWArqzSlgx1fPRK+F8RofayFiy5AbI2wcaZr2eMVLBZewV4+0JQOArUcmvC94KDO4a2gzHTM7yIa3gqp/iK8QjK8qzGtcxKss3jLf54hz7QswrR1RZODt5uR6p8f2TIsRM1SciNC6djBhi2sWMY1PYH7uJrCr6zAUiYE2V4fsgOJcgiPF4c6tnnLNmERXiFBsHQHL0Z1HXSJc7LmUIQh+/KAI+sPDpkGnsFp5O7AM5nRGkYVWyj+l+Ey1SAIjZilMS14zjgpY5sY8z8uZFvBVuOjLRBdePQnaUgHc7srpdqL8ArJguVXOtdzYr4VJwn0iKmNhPV2cXjixxaU0+mkZ5swDlaVlUitUHhlDa5ZLFf2muY0f8BpHhBx3rGZZkDIND6xoIwwf369prRmSpVvfcKbEk/eSO6JIE3sHHtR2b2aPLV84Oii0pBpDDa8bEbwCELH2Wp4cThb2nVx5OWaEBdo2B8q2zmCBomXVpibxJt0HFK6mL3MIOEIEVskNyCPjumMg3M8dJNA7IKzlf2OwgfEaQCnY3wpI9mWIbzSQdgPBO1miu50YIjIgWwAc8pBAvTcT+7R8Q2Ua8gb1sY+rmwiufPdxTqEYmtfs1Q42p/Xg2UhXtgSjNCWmNMdqrkcpklVN0PQMN/zQYhhgsOeUpygAh9H7tlYyHeaLd/vyN9lPFwTijNd2c8onrgLbSnYttfGmxPqNeWnq7IHyF3TvKGAB5dtRniLiSsO02w4jw5R08Y3SivL97YDjzrKI3jmCHo+1/A6iNHRsgJtOfenw3V1tK3CCw/nOcsEIsuVyOub6ONFeD17vZcre8rgPDYWvq80p9+N9B2HRAU8cwS4GZPAs7uBzN+thvXFXpf1HRKV8MYxWV1mqUj4ybdMhXjnaR5228IqS/KZK3hJhGKcz2VrOn5elEYWa1ne/gtJgCHcGkvyupKnB4TiYLqtXh6DCK9gLhDdCWTHsVCYj10oRVaUP5G7jVsQ4RUMZyZ7STbwlBRXQbA55lJ5DCK8gj1gp9TtlgjvWimuJiDa2slk1kGkIryC4IHzld1neB6xG2uqFFUTziQ3zKUgwitYBuZ5Md97h+H5vIXsWeEQBxeRuy5ZEOEVLBZf7Ba7gsx94Yb1vOdJUX3DhdwRCSK8QgsAZ5qNVfapofmboezaVlw+mMs9VtlkqaoivELL4hllI8ncTRZXUuuc78VxQ6PIPWVZEOEVWiDYqn0MufEy3jMwf4jodX0rKQtEGsOyv/3J/BM0RHgFQQM44mcfZReQe1y4SfxC2Qlk7rRIWLB8DtHkEL0M59zVSnUU4RVaDwihOIUFAMGIcH5blSF5e0jZcGW3KdvUAp51JbkxjbHEDwd8TiQ7jiyyjrzBXTK1te3qqZ6cuqrIrhFxZ9JRQxp+OiUdIfbyBeUp1fRM2nn8nK6gIOmIROFhNpw80RB7F4K8o8Zr+n3m8HgRe+JWcqdGEBVsd4om7KLXZ964zWGlSD1bhn9uJnd98mpyp3MWkBvoZoWhWuVoaNd+62aoAF8ZqqZMdXW5Z1FsP6D/km33HtEznW5fr+Em4x6KwUO6ix9aNmABo3L6CQeI4NZfUPClUA57Go15nStbNmSFfdPjZxE3+QEN14u6zJez3Ynqqqw3i3EfZT2VdeLyTwfIe9B4sgimM4kN+RnIP7v46PjCsDrn90fIjS9RzVMENeQGhW/4uYX/VkH2HEqJvE/jsg3arsHnPr7zMj+fQO0hU1/rlPftt5CcpgdnONlslgRBEIR4h+WCIAiCCK8gCIIIryAIgiDCKwiCIMIrCIIgiPAKgiCI8AqCIIjwyiMQBEEQ4RUEQRDhFQRBEER4BUEQrOW/AgwAyXgyJcW6seAAAAAASUVORK5CYII=" alt="">
+        <figure>
+            <img src="images/loader_fancesa-black.gif" alt="">
+            <p id="percent">
+                0%
+            </p>
+        </figure>
+    </div>
     <!-- Navigation -->
+    <!-- burger buttom -->
+    <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: hidden">
+        <svg width="1000px" height="1000px">
+            <path id="pathA" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+            <path id="pathB" d="M 300 500 L 700 500"></path>
+            <path id="pathC" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+        </svg>
+        <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+    </div>
     <nav class="container-fluid">
         <div class="row menu">
-            <div class="col-lg-12 text-md-center menu-top">
+            <div class="col-lg-12 text-xs-center menu-top">
                 <img src="images/logo-fancesa.png" alt="">
             </div>
             <div class="col-lg-12 col-md-12 menu-bottom text-xs-center">
@@ -128,29 +153,32 @@
     </nav>
 
     <!-- Header -->
-    <header class="container-fluid header">
+    <header class="container-fluid header jarallax">
         <div class="row">
             <div class="space"></div>
             <article class="col-lg-12 col-md-12 text-xs-center">
                 <h2>
                     Construye con el mejor<br>
-                    cemento del país.
+                    cemento del país
                 </h2>
 
                 <div class="pack-header">
-                    <figure class="pack-fancesa-top animated fadeInUp" id="packFancesaTop">
-                        <img src="images/pack-transparent.png" alt="">
+                    <figure class="pack-fancesa-top" id="packFancesaTop">
+                        <!--<img src="images/pack-transparent.png" alt="">-->
                     </figure>
                 </div>
 
             </article>
         </div>
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 0 C 50 100 50 100 100 0 L100 100 L0 100Z"></path>
+        </svg>
     </header>
     <!-- Section A -->
     <section class="container-fluid sNa">
         <div class="row">
             <article class="col-lg-6 col-md-6">
-                <div class="sNa-detail">
+                <div class="sNa-detail wew fadeInUp" data-wew-offset="0.4">
                     <h2>
                         Distribuidoras de<br>
                         <small>Cemento en Bolivia</small>
@@ -194,31 +222,20 @@
                 
             </article>
             <article class="col-lg-6 col-md-6">
-                <div id="map">
+                <div id="map" class="wew fadeInUp" data-wew-offset="0.4">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 20 610 660">
                         <defs>
-                            <style type="text/css">
-                                .land
-                                {
-                                    fill: #CCCCCC;
-                                    fill-opacity: 1;
-                                    stroke: #FFFFFF;
-                                    stroke-opacity: 1;
-                                    stroke-width: 0.8;
-                                }
-                            </style>
-
                             <amcharts:ammap projection="mercator" leftLongitude="-69.657430" topLatitude="-9.678570" rightLongitude="-57.519879" bottomLatitude="-22.902203"></amcharts:ammap>
 
                             <!-- All areas are listed in the line below. You can use this list in your script. -->
                             <!--{id:"BO-B"},{id:"BO-C"},{id:"BO-H"},{id:"BO-L"},{id:"BO-N"},{id:"BO-O"},{id:"BO-P"},{id:"BO-S"},{id:"BO-T"}-->
                         </defs>
                         <g id="paths">
-                            <path data-url="./" id="BO-B" title="El Beni" class="land bn" d="M144.82,309.4L130.84,295.27L128.41,293.8L127.5,286.83L120.47,274.88L119.49,273.89L115.84,273.85L113.09,271.91L112.06,267.47L113.04,262.67L112.66,260.24L107.92,255.43L106.48,250.99L106.6,244.96L105.66,237.15L107.57,231.87L106.78,221.65L108.8,209.69L110.23,206.03L111.82,205.28L116.35,199.07L116.22,197.88L114.82,197.09L113.7,191.06L114.16,189.54L117.33,184.84L119.54,183.65L126.23,175.25L131.29,171.18L137.09,150.65L136.31,146.86L136.84,138.74L137.46,137.94L137.46,137.94L138.95,135.71L138.27,132.59L140.62,121.31L137.46,113.63L138.3,105.55L138.95,104.44L145.81,102.23L148.34,100.05L147.92,96.83L149.06,91.53L150.09,89.96L153.51,89.2L161.16,89.28L169.32,84.47L170.69,82.25L170.57,80.9L180.38,65.61L181.97,60.6L179.36,59.77L183.22,56.76L187.72,57.36L196.25,51.42L201.62,45.21L208.14,41.24L211.76,36.86L214.86,36.35L214.86,36.35L214.53,38.83L212.53,40.42L212.73,47.83L215.15,54.82L218.89,61.19L219.56,66.54L214.55,75.94L215.12,81.3L219.17,92.52L223.58,93.78L226.28,98.69L224.27,103.65L225.15,105.71L227.28,106.74L228.85,103L231.68,105.86L233.97,116.87L235.61,118.98L244.43,119.88L245.36,120.54L248.01,126.1L254.11,129.22L259.21,130.82L260.19,137.19L264,141.03L266.44,142.42L276.36,143.31L283.26,144.97L284.25,145.95L288.89,146.48L291.78,143.73L295.47,142L301.8,142.54L311.91,147.66L314.73,151.95L319.3,154.53L323.23,154.62L328.96,151.02L332.3,152.26L333.21,156.76L335.98,161.48L340.9,164.61L347.3,170.04L351.41,168.12L353.55,170.12L353.57,171.4L366.72,177.24L372.58,176.99L375.34,175.96L380.39,177.65L381.81,183.7L385.99,188.38L392.47,193.11L394.17,197.48L395.7,197.99L406.62,195.85L406.62,195.85L306.07,253.79L286.81,259.15L288.53,265.36L287.49,276.89L291.97,288.38L301.56,303.1L304.17,305.68L311.16,309.44L316.83,319.71L315.4,320.56L259.93,318.29L250.78,317.04L250.78,317.04L225.35,320.32L220.88,329.3L221.35,331.25L218.82,338.89L216.96,341.82L212.51,344.13L204.87,346.51L194.29,349.41L190.67,349.47L179.7,346.5L172.29,341.63L162.38,330.67L160.94,328.65L159.31,324.03L156.99,321.11z"/>
+                            <path data-url="./" id="BO-B" title="El Beni" class="land-disabled bn" d="M144.82,309.4L130.84,295.27L128.41,293.8L127.5,286.83L120.47,274.88L119.49,273.89L115.84,273.85L113.09,271.91L112.06,267.47L113.04,262.67L112.66,260.24L107.92,255.43L106.48,250.99L106.6,244.96L105.66,237.15L107.57,231.87L106.78,221.65L108.8,209.69L110.23,206.03L111.82,205.28L116.35,199.07L116.22,197.88L114.82,197.09L113.7,191.06L114.16,189.54L117.33,184.84L119.54,183.65L126.23,175.25L131.29,171.18L137.09,150.65L136.31,146.86L136.84,138.74L137.46,137.94L137.46,137.94L138.95,135.71L138.27,132.59L140.62,121.31L137.46,113.63L138.3,105.55L138.95,104.44L145.81,102.23L148.34,100.05L147.92,96.83L149.06,91.53L150.09,89.96L153.51,89.2L161.16,89.28L169.32,84.47L170.69,82.25L170.57,80.9L180.38,65.61L181.97,60.6L179.36,59.77L183.22,56.76L187.72,57.36L196.25,51.42L201.62,45.21L208.14,41.24L211.76,36.86L214.86,36.35L214.86,36.35L214.53,38.83L212.53,40.42L212.73,47.83L215.15,54.82L218.89,61.19L219.56,66.54L214.55,75.94L215.12,81.3L219.17,92.52L223.58,93.78L226.28,98.69L224.27,103.65L225.15,105.71L227.28,106.74L228.85,103L231.68,105.86L233.97,116.87L235.61,118.98L244.43,119.88L245.36,120.54L248.01,126.1L254.11,129.22L259.21,130.82L260.19,137.19L264,141.03L266.44,142.42L276.36,143.31L283.26,144.97L284.25,145.95L288.89,146.48L291.78,143.73L295.47,142L301.8,142.54L311.91,147.66L314.73,151.95L319.3,154.53L323.23,154.62L328.96,151.02L332.3,152.26L333.21,156.76L335.98,161.48L340.9,164.61L347.3,170.04L351.41,168.12L353.55,170.12L353.57,171.4L366.72,177.24L372.58,176.99L375.34,175.96L380.39,177.65L381.81,183.7L385.99,188.38L392.47,193.11L394.17,197.48L395.7,197.99L406.62,195.85L406.62,195.85L306.07,253.79L286.81,259.15L288.53,265.36L287.49,276.89L291.97,288.38L301.56,303.1L304.17,305.68L311.16,309.44L316.83,319.71L315.4,320.56L259.93,318.29L250.78,317.04L250.78,317.04L225.35,320.32L220.88,329.3L221.35,331.25L218.82,338.89L216.96,341.82L212.51,344.13L204.87,346.51L194.29,349.41L190.67,349.47L179.7,346.5L172.29,341.63L162.38,330.67L160.94,328.65L159.31,324.03L156.99,321.11z"/>
                             <path data-url="./cochabamba" id="BO-C" title="Cochabamba" class="land cb" d="M152.87,429.43L148.91,420.43L143.83,413.68L134.46,406.27L134.46,406.27L142.43,402.08L139.35,386.53L132.66,376.51L136.63,368.72L142.83,368.17L145.52,366.69L146.54,364.81L147.65,357.56L147.79,355.39L146.2,352.42L144.69,340.7L139.98,331.76L138.33,329.93L138.08,316.29L140.74,312.52L144.82,309.4L144.82,309.4L144.82,309.4L144.82,309.4L156.99,321.11L159.31,324.03L160.94,328.65L162.38,330.67L172.29,341.63L179.7,346.5L190.67,349.47L194.29,349.41L204.87,346.51L212.51,344.13L216.96,341.82L218.82,338.89L221.35,331.25L220.88,329.3L225.35,320.32L250.78,317.04L250.78,317.04L249.62,320.49L249.95,324.88L251.98,333.27L253.02,344.36L249.99,352.96L245.67,361.85L245.86,366.28L250.1,375.48L268.14,387.63L274.38,395.64L274.15,399.38L267.99,399.41L265,401.67L264.23,405.72L256.13,417.49L249.81,423.43L249.41,424.59L249.55,426.37L253.2,430.41L261.01,443.12L263.75,451.87L269.92,456.27L270.5,461.36L267.93,465.04L267.93,465.04L266.3,462.14L264.24,462.25L262.31,464.32L257.32,465.41L253.62,463.4L250.34,458.2L244.5,456.07L241.17,456.01L233.66,460.8L231.89,462.82L232.24,465.61L222.57,460.6L222.02,458.1L217.29,452.23L217.29,452.23L210.73,447.12L199.17,433.96L190.57,428.6L187.81,429.22L182.42,422.55L179.44,422.14L175.09,423.06L167.12,429.19z"/>
                             <path data-url="./chuquisaca" id="BO-H" title="Chuquisaca" class="land ch" d="M222.89,618.34L212.17,608.37L210.7,603.84L211.1,593.98L212.66,589.25L213.31,581.38L219.88,564.47L216.31,550.17L216.15,547.1L218.64,538.27L223.29,535.46L232.92,533.97L240.03,530.05L245.52,524.67L248.15,520.83L244.81,515.8L243.41,511L243.6,508.68L241.84,504.39L238.98,501.91L235.18,501.59L232.43,502.92L227.5,502.7L219.65,499.1L215.64,496.4L215.15,494.77L208.7,486.96L207.59,483.6L209.66,479.4L209.22,472.95L213.19,469.1L213.45,466.91L212.51,466.05L204.19,464.64L202.95,457.79L200.91,452.9L201.31,448.78L216.13,452.74L217.29,452.23L217.29,452.23L222.02,458.1L222.57,460.6L232.24,465.61L231.89,462.82L233.66,460.8L241.17,456.01L244.5,456.07L250.34,458.2L253.62,463.4L257.32,465.41L262.31,464.32L264.24,462.25L266.3,462.14L267.93,465.04L267.93,465.04L269.2,465.85L269.33,469.35L271.05,473.68L282.86,487.02L284.98,491.69L287.24,492.12L289.3,491.01L290.24,485.88L291.01,484.98L298.3,485.08L296.92,496.23L298.83,522.05L298.91,533.09L300.45,537.29L300.9,541.09L301.65,559.27L302.49,559.97L310.12,560.62L314.59,557.61L321.07,561.32L376.09,561.12L376.09,561.12L372.53,565.98L372.95,589.48L372.95,589.48L286.43,589.33L283.11,586.98L281.74,585.06L276.44,583.64L275.21,595.38L273.52,597.22L266.9,596.73L260.3,594.07L252.66,586.35L249.26,585.74L247.4,588.68L245.92,593.86L243.3,594.41L239.24,591.26L230.89,587L226.75,586.51L225.98,588.08z"/>
-                            <path data-url="./" id="BO-L" title="La Paz" class="land lp" d="M144.82,309.4L140.74,312.52L138.08,316.29L138.33,329.93L139.98,331.76L144.69,340.7L146.2,352.42L147.79,355.39L147.65,357.56L146.54,364.81L145.52,366.69L142.83,368.17L136.63,368.72L132.66,376.51L139.35,386.53L142.43,402.08L134.46,406.27L134.46,406.27L128.36,398.64L124.99,398.65L118.7,400.69L95.94,415.64L96.97,420.36L96.06,422.05L94.68,422.73L93.02,422.47L82.66,414.74L75.81,411.7L66.6,411.11L60.37,411.7L53.88,415.04L48.08,422.17L42.19,426.87L29.31,431.88L29.31,431.88L18.41,428.8L17.19,426.04L17.02,420.67L15.16,416.48L8.52,410.56L7.82,397.21L3.3,392.82L0,392.39L1.88,388.59L6.29,384.14L13.58,380.1L16.92,373.46L23.41,365.7L32.47,359.36L31.01,353.65L31.37,349.75L33.56,346.96L41.5,343.53L41.96,342.08L41.24,340.62L38.49,339.85L34.7,335.96L30.84,335.89L29.53,336.92L26.03,336.65L22.31,333.25L11.86,305.34L19.56,290.02L23.21,286.63L25.88,286.25L26.18,284.86L18.22,277.16L13.86,271.21L14.7,262.7L17.43,260.96L20.54,256.84L21.22,251.73L33.89,240.82L33.1,238.64L32.97,234.13L33.78,233.25L40.26,231.62L38.21,222.92L34.35,219.53L32.38,210.49L29.93,206.19L34.14,198.89L35.05,195.83L34.44,162.82L39.17,157.27L42.4,156.02L46.02,148.4L49.54,144.11L49.54,144.11L51.32,143.98L59.43,139.88L61.49,136.58L63,132.05L68.61,128.1L69.05,122.39L70.29,120.02L81.37,116.12L83.68,114.72L84.45,113.35L122.16,130.25L137.46,137.94L137.46,137.94L136.84,138.74L136.31,146.86L137.09,150.65L131.29,171.18L126.23,175.25L119.54,183.65L117.33,184.84L114.16,189.54L113.7,191.06L114.82,197.09L116.22,197.88L116.35,199.07L111.82,205.28L110.23,206.03L108.8,209.69L106.78,221.65L107.57,231.87L105.66,237.15L106.6,244.96L106.48,250.99L107.92,255.43L112.66,260.24L113.04,262.67L112.06,267.47L113.09,271.91L115.84,273.85L119.49,273.89L120.47,274.88L127.5,286.83L128.41,293.8L130.84,295.27z"/>
-                            <path data-url="./" id="BO-N" title="Pando" class="land pd" d="M49.54,144.11L36.86,118.32L4.43,64.78L12.3,64.1L29.25,65.6L40.71,68.1L45.1,67.44L44.86,74.28L48.19,74.15L54.45,72.54L57.17,70.3L69.36,66.24L77.24,54.99L78.38,52.24L80.44,50.77L82.64,49.94L90.29,49.77L92.73,50.2L96.52,52.63L98.49,51.7L99.92,47.89L104.58,42L111.29,38.8L117.48,34.59L117.65,32.78L122.59,32.19L124.72,32.79L130.08,29.99L139.32,20.97L146.05,15.85L151.14,13.7L152.59,11.52L160.22,10.3L162.35,10.65L180.48,4.9L197.21,4.64L204.26,7.92L206.11,7.93L208.81,4.82L208.99,3.16L212.52,0L215.81,1.23L219.6,8.29L217.85,13.62L218.16,18.55L219.5,21.45L220.24,27.4L219.11,31.01L215.75,34.38L214.86,36.35L214.86,36.35L211.76,36.86L208.14,41.24L201.62,45.21L196.25,51.42L187.72,57.36L183.22,56.76L179.36,59.77L181.97,60.6L180.38,65.61L170.57,80.9L170.69,82.25L169.32,84.47L161.16,89.28L153.51,89.2L150.09,89.96L149.06,91.53L147.92,96.83L148.34,100.05L145.81,102.23L138.95,104.44L138.3,105.55L137.46,113.63L140.62,121.31L138.27,132.59L138.95,135.71L137.46,137.94L137.46,137.94L122.16,130.25L84.45,113.35L83.68,114.72L81.37,116.12L70.29,120.02L69.05,122.39L68.61,128.1L63,132.05L61.49,136.58L59.43,139.88L51.32,143.98z"/>
+                            <path data-url="./" id="BO-L" title="La Paz" class="land-disabled lp" d="M144.82,309.4L140.74,312.52L138.08,316.29L138.33,329.93L139.98,331.76L144.69,340.7L146.2,352.42L147.79,355.39L147.65,357.56L146.54,364.81L145.52,366.69L142.83,368.17L136.63,368.72L132.66,376.51L139.35,386.53L142.43,402.08L134.46,406.27L134.46,406.27L128.36,398.64L124.99,398.65L118.7,400.69L95.94,415.64L96.97,420.36L96.06,422.05L94.68,422.73L93.02,422.47L82.66,414.74L75.81,411.7L66.6,411.11L60.37,411.7L53.88,415.04L48.08,422.17L42.19,426.87L29.31,431.88L29.31,431.88L18.41,428.8L17.19,426.04L17.02,420.67L15.16,416.48L8.52,410.56L7.82,397.21L3.3,392.82L0,392.39L1.88,388.59L6.29,384.14L13.58,380.1L16.92,373.46L23.41,365.7L32.47,359.36L31.01,353.65L31.37,349.75L33.56,346.96L41.5,343.53L41.96,342.08L41.24,340.62L38.49,339.85L34.7,335.96L30.84,335.89L29.53,336.92L26.03,336.65L22.31,333.25L11.86,305.34L19.56,290.02L23.21,286.63L25.88,286.25L26.18,284.86L18.22,277.16L13.86,271.21L14.7,262.7L17.43,260.96L20.54,256.84L21.22,251.73L33.89,240.82L33.1,238.64L32.97,234.13L33.78,233.25L40.26,231.62L38.21,222.92L34.35,219.53L32.38,210.49L29.93,206.19L34.14,198.89L35.05,195.83L34.44,162.82L39.17,157.27L42.4,156.02L46.02,148.4L49.54,144.11L49.54,144.11L51.32,143.98L59.43,139.88L61.49,136.58L63,132.05L68.61,128.1L69.05,122.39L70.29,120.02L81.37,116.12L83.68,114.72L84.45,113.35L122.16,130.25L137.46,137.94L137.46,137.94L136.84,138.74L136.31,146.86L137.09,150.65L131.29,171.18L126.23,175.25L119.54,183.65L117.33,184.84L114.16,189.54L113.7,191.06L114.82,197.09L116.22,197.88L116.35,199.07L111.82,205.28L110.23,206.03L108.8,209.69L106.78,221.65L107.57,231.87L105.66,237.15L106.6,244.96L106.48,250.99L107.92,255.43L112.66,260.24L113.04,262.67L112.06,267.47L113.09,271.91L115.84,273.85L119.49,273.89L120.47,274.88L127.5,286.83L128.41,293.8L130.84,295.27z"/>
+                            <path data-url="./" id="BO-N" title="Pando" class="land-disabled pd" d="M49.54,144.11L36.86,118.32L4.43,64.78L12.3,64.1L29.25,65.6L40.71,68.1L45.1,67.44L44.86,74.28L48.19,74.15L54.45,72.54L57.17,70.3L69.36,66.24L77.24,54.99L78.38,52.24L80.44,50.77L82.64,49.94L90.29,49.77L92.73,50.2L96.52,52.63L98.49,51.7L99.92,47.89L104.58,42L111.29,38.8L117.48,34.59L117.65,32.78L122.59,32.19L124.72,32.79L130.08,29.99L139.32,20.97L146.05,15.85L151.14,13.7L152.59,11.52L160.22,10.3L162.35,10.65L180.48,4.9L197.21,4.64L204.26,7.92L206.11,7.93L208.81,4.82L208.99,3.16L212.52,0L215.81,1.23L219.6,8.29L217.85,13.62L218.16,18.55L219.5,21.45L220.24,27.4L219.11,31.01L215.75,34.38L214.86,36.35L214.86,36.35L211.76,36.86L208.14,41.24L201.62,45.21L196.25,51.42L187.72,57.36L183.22,56.76L179.36,59.77L181.97,60.6L180.38,65.61L170.57,80.9L170.69,82.25L169.32,84.47L161.16,89.28L153.51,89.2L150.09,89.96L149.06,91.53L147.92,96.83L148.34,100.05L145.81,102.23L138.95,104.44L138.3,105.55L137.46,113.63L140.62,121.31L138.27,132.59L138.95,135.71L137.46,137.94L137.46,137.94L122.16,130.25L84.45,113.35L83.68,114.72L81.37,116.12L70.29,120.02L69.05,122.39L68.61,128.1L63,132.05L61.49,136.58L59.43,139.88L51.32,143.98z"/>
                             <path data-url="./oruro" id="BO-O" title="Oruro" class="land or" d="M29.31,431.88L42.19,426.87L48.08,422.17L53.88,415.04L60.37,411.7L66.6,411.11L75.81,411.7L82.66,414.74L93.02,422.47L94.68,422.73L96.06,422.05L96.97,420.36L95.94,415.64L118.7,400.69L124.99,398.65L128.36,398.64L134.46,406.27L134.46,406.27L143.83,413.68L148.91,420.43L152.87,429.43L152.87,429.43L152.14,430.96L147.01,433.24L146.51,437.85L146.79,440.14L147.76,441.41L150.8,442.65L153.85,442.19L157.78,443.12L157.34,444.31L150.17,448.52L149.5,455.7L151.75,460.79L157.87,466.27L163.57,468.46L169.11,469.47L170.51,470.61L174.35,481.27L182.22,491.12L182.39,492.2L181.52,493.38L162.38,495.18L158.36,497.5L149.26,505.47L97.35,527.59L54.65,512.84L54.65,512.84L61.15,505.77L58.73,502.33L55.73,499.69L51.14,497.71L44.06,490.27L38.14,486.18L34.82,480.26L36.48,476.53L33.07,469.13L31.86,464.66L31.91,455.4L29.33,450.58L28.51,441.92L25.58,437.83L26.05,436.48L28.94,434.47z"/>
                             <path data-url="./potosi" id="BO-P" title="Potosí" class="land pt" d="M222.89,618.34L222.07,623.57L220.23,625.83L218.26,632.35L224.4,640.78L226.11,648.22L225.23,648.47L225.23,648.47L197,649.3L193.83,647.21L188.12,639.74L180.48,634.26L173.14,631.49L168.91,647.51L166.97,649.66L153.3,653.73L149.65,653.96L147.24,655.66L145.32,666.47L132.82,671.73L133.32,677.72L127.68,682.36L124.7,687.91L104.75,692.24L93.95,690.98L89.76,688.26L89.37,681.99L91.1,673.41L86.92,659.6L87.43,656.29L86.33,649.01L84.9,646.61L79.23,641.27L78.22,629.58L76.53,625.36L74.14,622.27L74.01,605.42L62.14,586.17L58.02,586.11L55.28,583.63L55.03,575.17L56.85,572.7L59.71,570.72L59.97,569.64L55.82,566.26L48.68,562.92L45.59,558.58L45.46,555.88L48.04,553.98L47.16,548.63L43.95,542.04L44.33,540.69L50.72,538.95L54.39,538.79L57.13,531.47L54.93,527.07L48.74,522.21L48.87,520.14L54.65,512.84L54.65,512.84L97.35,527.59L149.26,505.47L158.36,497.5L162.38,495.18L181.52,493.38L182.39,492.2L182.22,491.12L174.35,481.27L170.51,470.61L169.11,469.47L163.57,468.46L157.87,466.27L151.75,460.79L149.5,455.7L150.17,448.52L157.34,444.31L157.78,443.12L153.85,442.19L150.8,442.65L147.76,441.41L146.79,440.14L146.51,437.85L147.01,433.24L152.14,430.96L152.87,429.43L152.87,429.43L167.12,429.19L175.09,423.06L179.44,422.14L182.42,422.55L187.81,429.22L190.57,428.6L199.17,433.96L210.73,447.12L217.29,452.23L217.29,452.23L216.13,452.74L201.31,448.78L200.91,452.9L202.95,457.79L204.19,464.64L212.51,466.05L213.45,466.91L213.19,469.1L209.22,472.95L209.66,479.4L207.59,483.6L208.7,486.96L215.15,494.77L215.64,496.4L219.65,499.1L227.5,502.7L232.43,502.92L235.18,501.59L238.98,501.91L241.84,504.39L243.6,508.68L243.41,511L244.81,515.8L248.15,520.83L245.52,524.67L240.03,530.05L232.92,533.97L223.29,535.46L218.64,538.27L216.15,547.1L216.31,550.17L219.88,564.47L213.31,581.38L212.66,589.25L211.1,593.98L210.7,603.84L212.17,608.37z"/>
                             <path data-url="./santa-cruz" id="BO-S" title="Santa Cruz" class="land sc" d="M532.58,501.26L487.9,498.5L456.05,507.12L399.11,517.01L390.5,540.2L376.09,561.12L376.09,561.12L321.07,561.32L314.59,557.61L310.12,560.62L302.49,559.97L301.65,559.27L300.9,541.09L300.45,537.29L298.91,533.09L298.83,522.05L296.92,496.23L298.3,485.08L291.01,484.98L290.24,485.88L289.3,491.01L287.24,492.12L284.98,491.69L282.86,487.02L271.05,473.68L269.33,469.35L269.2,465.85L267.93,465.04L267.93,465.04L270.5,461.36L269.92,456.27L263.75,451.87L261.01,443.12L253.2,430.41L249.55,426.37L249.41,424.59L249.81,423.43L256.13,417.49L264.23,405.72L265,401.67L267.99,399.41L274.15,399.38L274.38,395.64L268.14,387.63L250.1,375.48L245.86,366.28L245.67,361.85L249.99,352.96L253.02,344.36L251.98,333.27L249.95,324.88L249.62,320.49L250.78,317.04L250.78,317.04L259.93,318.29L315.4,320.56L316.83,319.71L311.16,309.44L304.17,305.68L301.56,303.1L291.97,288.38L287.49,276.89L288.53,265.36L286.81,259.15L306.07,253.79L406.62,195.85L406.62,195.85L407.43,196.82L411.7,198.23L434.59,195.12L438.68,199.75L447.06,204.73L449.45,204.88L452.91,207.78L462.94,211.13L467.59,220.62L465.51,224.74L463.54,226.53L462.68,229.95L464.26,236.32L472.81,253.51L473.93,277.9L458.17,278.1L475.52,297.9L478.9,338.78L565.7,342.26L566.92,341.75L568.24,339.81L571.33,339.62L571.49,345.73L570.38,351.47L566.7,355L563.85,360.29L564.48,372.12L566.44,377.84L567.2,387.32L568.16,390.94L569.13,391.96L575.24,394.44L581.77,398.99L583.23,401.23L587.01,403.44L588.68,403.61L592.81,401.57L600.68,408.51L598.97,410.81L599.99,413.4L602.11,415.54L602.03,421.72L612,440.64L609.87,444.38L599.43,477.77L601.82,478.17L602.74,485.06L599.11,485.27L581.74,522.14L595.32,534.62L592.85,537.48L579.84,544.9L581.14,540.32L580.24,526.92z"/>
@@ -229,19 +246,21 @@
             </article>
         </div>
     </section>
-
     <!-- Section B -->
     <section class="container-fluid sNb">
         <div class="row">
             <article class="col-lg-12 col-md-12 text-xs-center">
                 <div class="sNb-detail">
-                    <div id="pointer">
+                    <div id="pointer" class="wew bounceInDown" data-wew-offset="0.6">
                     </div>
                     <a href="#">Comprar cerca de mi</a>
                 </div>
             </article>
-        </div>
-    </section>    
+        </div> 
+    </section>
+    <svg id="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C40 0 60 0 100 100 L100 100 L100 0 L0 0Z"></path>
+    </svg>  
     
     <!-- Section C -->
     <section class="container-fluid sNc">
@@ -249,7 +268,7 @@
             <article class="col-lg-6 col-md-6">
                 <div class="pack-effect">
                     <figure class="pack-fancesa" id="packFancesa">
-                        <img src="images/pack-black.jpg" alt="">
+                        <img src="images/pack-fancesa-perfil-big.png" alt="" class="wew bounceInRight" data-wew-offset="0.6" data-wew-duration="2s">
                     </figure>
                 </div>
             </article>
@@ -261,22 +280,32 @@
                     </h2>
                     <a href="#" class="btn">
                         <span class="btn-text">Ver más detalles</span>
-                        <span class="icon icon-right-white"></span>
                     </a>
                 </div>
             </article>
         </div>
+
+        <div class="row sellos">
+            <div class="col-md-4 text-md-right">
+                <img src="images/producto_sello.png" alt="" class="wew fadeInUp">
+            </div>
+            <div class="col-md-4 text-md-center">
+                <img src="images/producto_sello.png" alt="" class="wew fadeInUp" data-wew-delay="0.5s">
+            </div>
+            <div class="col-md-4 text-md-left">
+                <img src="images/producto_sello.png" alt="" class="wew fadeInUp" data-wew-delay="1s">
+            </div>
+        </div>
     </section>
     
     <!-- Section D -->
-    <section class="container-fluid sNd">
+    <section class="container-fluid sNd jarallax">
         <div class="row">
             <article class="col-lg-6 col-md-6">
                 <div class="sNd-detail">
                     <aside>
                         <h2>Calendarios</h2>
-                        <img src="images/logo-fancesa.png" alt="imagen de logo fancesa">
-                        <p>
+                        <p class="detail-p">
                             No debe faltar en tu celular o tablet<br>
                             los nuevos calendarios Fancesa 2017,<br>
                             haz clic y podrás descargarte todas<br>
@@ -284,7 +313,6 @@
                         </p>
                         <a href="#" class="btn">
                             <span class="btn-text">Ver Calendarios</span>
-                            <span class="icon icon-right-white"></span>
                         </a>
                     </aside>
                 </div>
@@ -315,7 +343,7 @@
     </section>
 
     <!-- Section F -->
-    <section class="container-fluid sNf">
+    <section class="container-fluid sNf jarallax">
         <div class="row">
             <article class="col-lg-12 col-md-12">
                 <div class="sNf-detail">
@@ -325,29 +353,135 @@
                             de nuestra larga experiencia en la<br>
                             elaboración del mejor cemento de Bolivia.
                         </p>
+
                         <a href="#" class="btn btn-white">
                             <span class="btn-text">Ver Sistema de Gestión</span>
-                            <span class="icon icon-right-black"></span>
                         </a>
                         <a href="#" class="btn">
                             <span class="btn-text">Productos</span>
-                            <span class="icon icon-right-white"></span>
                         </a>
                     </aside>
                 </div>
             </article>
         </div>
     </section>
-    <!-- script -->
-    <script src="js/velocity.min.js"></script>
-    <script src="js/index.js"></script>
-    <!--
-    <script src="js/sweet-scroll.min.js"></script>
+    <section>
+        <!-- carrousel -->
+        <div class="carousel" data-flickity='{ "lazyLoad": true,"percentPosition": false,"lazyLoad": 2,"initialIndex": 1 }'>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/tulip.jpg" alt="tulip" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/grapes.jpg" alt="grapes" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/raspberries.jpg" alt="raspberries" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/wolf.jpg" alt="wolf" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/shore.jpg" alt="sea" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/leaf-droplets.jpg" alt="leaf droplets" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/gulls.jpg" alt="gulls" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/touch-screen.jpg" alt="touch screen" />
+                </div>
+                <div class="carousel-cell">
+                    <img class="carousel-cell-image"
+                    data-flickity-lazyload="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/van.jpg" alt="van" />
+                </div>
+        </div>
+    </section>
+    <!-- ScrollTop -->
+    <button onclick="scrollToTop(700);" class="upbottom"></button>
+
+    <!-- Script for load resources -->
+    <script src="js/preloadjs-0.6.2.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sweetScroll = new SweetScroll({/* some options */});
-        }, false);
+        var load = {
+            preload: null,
+            manifest: [
+                {'id':'packFancesaTop',src:'pack-transparent.png'}
+            ],
+            init: function(){
+                this.preload = new createjs.LoadQueue(true, "images/");
+                this.preload.on("fileload", this.handleFileLoad);
+                this.preload.on("progress", this.handleOverallProgress);
+                this.preload.on("error", this.handleFileError);
+                this.preload.on("complete", this.handleComplete);
+                this.preload.setMaxConnections(5);
+                this.loadAll();
+            },
+            stop: function(){
+                if (this.preload != null) {
+                    this.preload.close();
+                }
+            },
+            loadAll: function(){
+                var self = this;
+                this.manifest.forEach(function(el){
+                    self.loadAnother(el);
+                })
+            },
+            loadAnother: function(el){
+                var item = el;
+                this.preload.loadFile(item);
+            },
+            handleComplete: function(){
+                document.querySelector('.loader').setAttribute('class','loader animated fadeOut');
+                setTimeout(function(){
+                    document.querySelector('.pack-fancesa-top').setAttribute('class','pack-fancesa-top animated fadeInUp');
+                },500);
+            },
+            handleFileLoad: function(event){
+                if(event.item.id === 'packFancesaTop'){
+                    document.querySelector('.pack-fancesa-top').appendChild(event.result);
+                }
+            },
+            handleOverallProgress: function(event) {
+                document.querySelector('#percent').textContent = Math.round(event.progress * 100) + "%";
+            },
+            handleFileError: function(event) {
+                document.querySelector('.loader').setAttribute('class','loader animated fadeOut');
+                console.error('error');
+            }
+        }
+        load.init();
     </script>
-    -->
+    <!-- script for animation logo menu -->
+    <script src="js/menu.js"></script>
+    <!-- script scroll effect -->
+    <script src="js/wew.min.js"></script>
+    <script>
+        /* init animation scroll*/
+        var wew = new Wew();
+        wew.init();
+    </script>
+    <script src="js/index.js"></script>
+    
+    <!-------------------------------------------------- 
+        effects only for test 
+    ------------------------------------------------------>
+    <script src="js/jarallax.min.js"></script>
+    <script>
+        jarallax(document.querySelectorAll('.jarallax'), {
+            speed: 0.5
+        });
+    </script>
+    <script src="js/onlytest/flickity.pkgd.min.js"></script>
 </body>
 </html>

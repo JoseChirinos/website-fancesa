@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en" class="export">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Touch, responsive, flickable carousels">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Flickity &#xB7; Style</title>
+
+    <link rel="stylesheet" href="css/flickity-docs.css?2" media="screen">
+
+</head>
+<body class="page--style">
+
+
+<nav class="site-nav">
+  <div class="container">
+    <ul class="site-nav__list">
+      <li class="site-nav__item site-nav__item--homepage"><a href=".">Flickity</a></li>
+      <li class="site-nav__item site-nav__item--style"><a href="style.html">Style</a></li>
+      <li class="site-nav__item site-nav__item--options"><a href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--api"><a href="api.html">API</a></li>
+      <li class="site-nav__item site-nav__item--events"><a href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras"><a href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license"><a href="license.html">License</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="main">
+  <div class="container">
+      <h1 class="page-title">Style</h1>
+
+
+    <ul class="page-nav" data-js="page-nav">
+<li class="page-nav__item page-nav__item--h2"><a href="#cell-style">Cell style</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#cell-sizing">Cell sizing</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#selected-cell">Selected cell</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#previous-next-buttons">Previous &amp; next buttons</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#page-dots">Page dots</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#carousel">Carousel</a></li>
+</ul>
+
+
+<h2 id="cell-style">Cell style</h2>
+
+<h3 id="cell-sizing">Cell sizing</h3>
+
+<p>All sizing and styling of the cells are handled by your own CSS. The height of the carousel is set to the maximum height of the cells.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="class">.carousel-cell</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>; <span class="comment">/* full width */</span>
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">160px</span></span></span>; <span class="comment">/* height of carousel */</span>
+  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10px</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--full-width" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/dPdyJK">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="class">.carousel-cell</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50%</span></span></span>; <span class="comment">/* half-width */</span>
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">160px</span></span></span>;
+  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10px</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--half-width" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/gbvOvy">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<p>Cells can be different sizes. You can use any unit you like: percent, pixels, etc.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="class">.carousel-cell</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">33%</span></span></span>;
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">160px</span></span></span>;
+  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10px</span></span></span>;
+}</span>
+<span class="class">.carousel-cell</span><span class="class">.size-180</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">180px</span></span></span>; }</span>
+<span class="class">.carousel-cell</span><span class="class">.size-large</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">75%</span></span></span>; }</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--various-widths" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell size-180"></div>
+      <div class="carousel-cell size-large"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell size-large"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/raJNdm">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<p>You can use media queries to show different number of cells for different breakpoints.</p>
+
+<div class="example">
+  <div class="example__code">
+<pre><code class="css"><span class="comment">/* default full-width cells */</span>
+<span class="class">.carousel-cell</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">160px</span></span></span>;
+  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10px</span></span></span>;
+}</span>
+
+<span class="at_rule">@<span class="keyword">media</span> screen and ( min-width: <span class="number">768px</span> ) </span>{
+  <span class="comment">/* half-width cells for larger devices */</span>
+  <span class="class">.carousel-cell</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50%</span></span></span>; }</span>
+}
+</code></pre>
+  </div>
+  <div class="example__demo">
+    <div class="carousel carousel--media-queried" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/azqbGV">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<h3 id="selected-cell">Selected cell</h3>
+
+<p>Flickity adds <code>is-selected</code> class to the selected cell.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="class">.carousel-cell</span><span class="class">.is-selected</span> <span class="rules">{
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ED2</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--selected-cell carousel--show-several" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/YPezvR">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h2 id="previous-next-buttons">Previous &amp; next buttons</h2>
+
+<p>Style and position previous &amp; next buttons with CSS.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="comment">/* big buttons, no circle */</span>
+<span class="class">.flickity-prev-next-button</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span></span>;
+}</span>
+<span class="class">.flickity-prev-next-button</span><span class="pseudo">:hover</span> <span class="rules">{
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span></span>;
+}</span>
+<span class="comment">/* arrow color */</span>
+<span class="class">.flickity-prev-next-button</span> <span class="class">.arrow</span> <span class="rules">{
+  <span class="rule"><span class="attribute">fill</span>:<span class="value"> white</span></span>;
+}</span>
+<span class="class">.flickity-prev-next-button</span><span class="class">.no-svg</span> <span class="rules">{
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
+}</span>
+<span class="comment">/* hide disabled button */</span>
+<span class="class">.flickity-prev-next-button</span><span class="pseudo">:disabled</span> <span class="rules">{
+  <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--full-width carousel--prev-next-big-arrow" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/EaQxpb">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="comment">/* smaller, dark, rounded square */</span>
+<span class="class">.flickity-prev-next-button</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">30px</span></span></span>;
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;
+  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>;
+}</span>
+<span class="class">.flickity-prev-next-button</span><span class="pseudo">:hover</span> <span class="rules">{
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#F90</span></span></span>;
+}</span>
+<span class="comment">/* arrow color */</span>
+<span class="class">.flickity-prev-next-button</span> <span class="class">.arrow</span> <span class="rules">{
+  <span class="rule"><span class="attribute">fill</span>:<span class="value"> white</span></span>;
+}</span>
+<span class="class">.flickity-prev-next-button</span><span class="class">.no-svg</span> <span class="rules">{
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
+}</span>
+<span class="comment">/* position outside */</span>
+<span class="class">.flickity-prev-next-button</span><span class="class">.previous</span> <span class="rules">{
+  <span class="rule"><span class="attribute">left</span>:<span class="value"> -<span class="number">40px</span></span></span>;
+}</span>
+<span class="class">.flickity-prev-next-button</span><span class="class">.next</span> <span class="rules">{
+  <span class="rule"><span class="attribute">right</span>:<span class="value"> -<span class="number">40px</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--full-width carousel--prev-next-small-outside" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/zxRYMP">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<p>Previous &amp; next buttons have <code>:focus</code> style. Click on a carousel, then hit <kbd>TAB</kbd> to see it.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="comment">/* already included in flickity.css */</span>
+<span class="class">.flickity-prev-next-button</span><span class="pseudo">:focus</span> <span class="rules">{
+  <span class="rule"><span class="attribute">outline</span>:<span class="value"> none</span></span>;
+  <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="hexcolor">#09F</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="page-dots">Page dots</h2>
+
+<p>Style and position page dots with CSS.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="comment">/* position dots in carousel */</span>
+<span class="class">.flickity-page-dots</span> <span class="rules">{
+  <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0px</span></span></span>;
+}</span>
+<span class="comment">/* white circles */</span>
+<span class="class">.flickity-page-dots</span> <span class="class">.dot</span> <span class="rules">{
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">12px</span></span></span>;
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">12px</span></span></span>;
+  <span class="rule"><span class="attribute">opacity</span>:<span class="value"> <span class="number">1</span></span></span>;
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span></span>;
+  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">2px</span> solid white</span></span>;
+}</span>
+<span class="comment">/* fill-in selected dot */</span>
+<span class="class">.flickity-page-dots</span> <span class="class">.dot</span><span class="class">.is-selected</span> <span class="rules">{
+  <span class="rule"><span class="attribute">background</span>:<span class="value"> white</span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--full-width carousel--o-dots" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/EaQaYL">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="comment">/* position dots up a bit */</span>
+<span class="class">.flickity-page-dots</span> <span class="rules">{
+  <span class="rule"><span class="attribute">bottom</span>:<span class="value"> -<span class="number">22px</span></span></span>;
+}</span>
+<span class="comment">/* dots are lines */</span>
+<span class="class">.flickity-page-dots</span> <span class="class">.dot</span> <span class="rules">{
+  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">4px</span></span></span>;
+  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">40px</span></span></span>;
+  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">0</span></span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--full-width carousel--line-dots" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/ByYyao">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h2 id="carousel">Carousel</h2>
+
+<p>Add a carousel <code>:focus</code> style style to aid accessibility. When focused, users can navigate the carousel with their keyboard.</p>
+
+<div class="example duo">
+  <div class="example__code duo__cell">
+<pre><code class="css"><span class="class">.flickity-enabled</span><span class="pseudo">:focus</span> <span class="class">.flickity-viewport</span> <span class="rules">{
+  <span class="rule"><span class="attribute">outline</span>:<span class="value"> thin dotted</span></span>;
+  <span class="rule"><span class="attribute">outline</span>:<span class="value"> <span class="number">5px</span> auto -webkit-focus-ring-color</span></span>;
+}</span>
+</code></pre>
+  </div>
+  <div class="example__demo duo__cell">
+    <div class="carousel carousel--carousel-focus" data-flickity="">
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+      <div class="carousel-cell"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="https://codepen.io/desandro/pen/RNQOGm">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<nav class="site-nav">
+  <div class="container">
+    <ul class="site-nav__list">
+      <li class="site-nav__item site-nav__item--homepage"><a href=".">Flickity</a></li>
+      <li class="site-nav__item site-nav__item--style"><a href="style.html">Style</a></li>
+      <li class="site-nav__item site-nav__item--options"><a href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--api"><a href="api.html">API</a></li>
+      <li class="site-nav__item site-nav__item--events"><a href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras"><a href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license"><a href="license.html">License</a></li>
+    </ul>
+  </div>
+</nav>
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <p class="site-footer__copy">Metafizzy makes delightful UI libraries &amp; logos</p>
+
+    <div class="showcase">
+    
+      <ul class="showcase-item-list">
+          <li class="showcase-item">
+            <a class="showcase-item__link" href="https://isotope.metafizzy.co">
+              <div class="showcase-item__image">
+                  <svg class="isotope-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 350 350" width="100" height="100">
+                    <path class="isotope-illo__color1" fill="#6C6" d="M80 170H30c-6 0-10-5-10-10v-50c0-6 5-10 10-10h50c6 0 10 5 10 10v50C90 166 86 170 80 170z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M80 90H30c-6 0-10-5-10-10V30c0-6 5-10 10-10h50c6 0 10 5 10 10v50C90 86 86 90 80 90z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M160 90h-50c-6 0-10-5-10-10V30c0-6 5-10 10-10h50c6 0 10 5 10 10v50C170 86 166 90 160 90z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M240 90h-50c-6 0-10-5-10-10V30c0-6 5-10 10-10h50c6 0 10 5 10 10v50C250 86 246 90 240 90z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M320 90h-50c-6 0-10-5-10-10V30c0-6 5-10 10-10h50c6 0 10 5 10 10v50C330 86 326 90 320 90z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M155 165h-40c-6 0-10-5-10-10v-40c0-6 5-10 10-10h40c6 0 10 5 10 10v40 C165 161 161 165 155 165z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M230 160h-30c-6 0-10-5-10-10v-30c0-6 5-10 10-10h30c6 0 10 5 10 10v30 C240 156 236 160 230 160z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M305 155h-20c-6 0-10-5-10-10v-20c0-6 5-10 10-10h20c6 0 10 5 10 10v20 C315 151 311 155 305 155z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M65 235H45c-6 0-10-5-10-10v-20c0-6 5-10 10-10h20c6 0 10 5 10 10v20C75 231 71 235 65 235z"/>
+                    <path class="isotope-illo__color1" fill="#6C6" d="M140 230h-10c-6 0-10-5-10-10v-10c0-6 5-10 10-10h10c6 0 10 5 10 10v10 C150 226 146 230 140 230z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M305 235h-20c-6 0-10-5-10-10v-20c0-6 5-10 10-10h20c6 0 10 5 10 10v20 C315 231 311 235 305 235z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M65 315H45c-6 0-10-5-10-10v-20c0-6 5-10 10-10h20c6 0 10 5 10 10v20C75 311 71 315 65 315z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M150 320h-30c-6 0-10-5-10-10v-30c0-6 5-10 10-10h30c6 0 10 5 10 10v30 C160 316 156 320 150 320z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M220 230h-10c-6 0-10-5-10-10v-10c0-6 5-10 10-10h10c6 0 10 5 10 10v10 C230 226 226 230 220 230z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M235 325h-40c-6 0-10-5-10-10v-40c0-6 5-10 10-10h40c6 0 10 5 10 10v40 C245 321 241 325 235 325z"/>
+                    <path class="isotope-illo__color2" fill="#19F" d="M320 330h-50c-6 0-10-5-10-10v-50c0-6 5-10 10-10h50c6 0 10 5 10 10v50 C330 326 326 330 320 330z"/>
+                  </svg>
+              </div>
+              <div class="showcase-item__text">
+                <h3 class="showcase-item__title">Isotope</h3>
+                <p class="showcase-item__description">Filter &amp; sort magical layouts</p>
+              </div>
+            </a>
+          </li>
+    
+          <li class="showcase-item">
+            <a class="showcase-item__link" href="https://infinite-scroll.com">
+              <div class="showcase-item__image">
+                  <svg class="infinite-scroll-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 520 520" width="200" height="200">
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M90,110H10V90c0-22,18-40,40-40h40V110z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front1" d="M270,90L270,90c0-22-18-40-40-40h0H50h0c22,0,40,18,40,40v0v0v160h180V90z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front2" d="M170,330v-20H90v20v0c0,22,18,40,40,40h0h40V330z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M350,150H210c-22,0-40,18-40,40v140v0c0,22-18,40-40,40h0h220V150z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front3" d="M430,470V270H250v160c0,22,18,40,40,40H430z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--front2" d="M250,190v20h180v-20c0-22-18-40-40-40H210h0C232,150,250,168,250,190L250,190z"/>
+                    <path class="infinite-scroll-illo__page infinite-scroll-illo__page--back" d="M330,410v20v0c0,22-18,40-40,40h0h180c22,0,40-18,40-40v-20H330z"/>
+                  </svg>
+              </div>
+              <div class="showcase-item__text">
+                <h3 class="showcase-item__title">Infinite Scroll</h3>
+                <p class="showcase-item__description">Automatically add next page</p>
+              </div>
+            </a>
+          </li>
+    
+    
+          <li class="showcase-item">
+            <a class="showcase-item__link" href="https://packery.metafizzy.co">
+              <div class="showcase-item__image">
+                  <svg class="packery-illo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 700" width="100" height="100">
+                    <path class="packery-illo__item" fill="#C09" d="M172 180H48c-4 0-8-4-8-8V48c0-4 4-8 8-8h124c4 0 8 4 8 8v124C180 176 176 180 172 180z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M172 340H48c-4 0-8-4-8-8V208c0-4 4-8 8-8h124c4 0 8 4 8 8v124C180 336 176 340 172 340z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M492 660H368c-4 0-8-4-8-8V528c0-4 4-8 8-8h124c4 0 8 4 8 8v124C500 656 496 660 492 660z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M652 660H528c-4 0-8-4-8-8V528c0-4 4-8 8-8h124c4 0 8 4 8 8v124C660 656 656 660 652 660z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M652 500H368c-4 0-8-4-8-8V368c0-4 4-8 8-8h284c4 0 8 4 8 8v124C660 496 656 500 652 500z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M332 660H48c-4 0-8-4-8-8V368c0-4 4-8 8-8h284c4 0 8 4 8 8v284C340 656 336 660 332 660z"/>
+                    <path class="packery-illo__item" fill="#C09" d="M652 340H528c-4 0-8-4-8-8V48c0-4 4-8 8-8h124c4 0 8 4 8 8v284C660 336 656 340 652 340z"/>
+                    <path class="packery-illo__draggie" fill="#EA0" d="M572 440H288c-4 0-8-4-8-8V148c0-4 4-8 8-8h284c4 0 8 4 8 8v284C580 436 576 440 572 440z"/>
+                    <g>
+                      <path class="packery-illo__hand" fill="white" d="M530 250c-11 0-20 9-20 20v-10c0-11-9-20-20-20s-20 9-20 20c0-11-9-20-20-20s-20 9-20 20c0-11-9-20-20-20
+                        s-20 9-20 20v20c-17 0-30 13-30 30c0 11 6 20 14 25l19 35c10 18 30 30 51 30h28
+                        c43 0 78-35 78-78V270C550 259 541 250 530 250z"/>
+                      <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="430" y1="300" x2="430" y2="340"/>
+                      <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="470" y1="300" x2="470" y2="340"/>
+                      <line class="packery-illo__hand-line" stroke="#EA0" fill="none" stroke-width="16" stroke-linecap="round" x1="510" y1="300" x2="510" y2="340"/>
+                    </g>
+                  </svg>
+              </div>
+              <div class="showcase-item__text">
+                <h3 class="showcase-item__title">Packery</h3>
+                <p class="showcase-item__description">Gapless, draggable grid layouts</p>
+              </div>
+            </a>
+          </li>
+    
+          <li class="showcase-item">
+            <a class="showcase-item__link" href="http://fizzy.school">
+              <div class="showcase-item__image">
+                  <svg class="witchie-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 1000" width="200" height="200">
+                    <circle class="witchie-logo__moon" fill="white" cx="500" cy="500" r="500"/>
+                    <path class="witchie-logo__broom" fill="#EA0" d="M582 675a35 35 0 0 0 8-20 3 3 0 0 1 3-2h71a3 3 0 0 1 3 3 59 59 0 0 0 0 20 3 3 0 0 1-3 3h-79A3 3 0 0 1 582 675Zm219 4a13 13 0 0 0 13-14c-1-7-7-12-14-12h-44a3 3 0 0 0-3 3v21a3 3 0 0 0 3 3ZM299 660a203 203 0 0 1-27-36 8 8 0 0 0-4-3L178 582a13 13 0 0 0-18 12v77a8 8 0 0 0 8 8h22a5 5 0 0 1 2 10L164 703a8 8 0 0 0-4 7v28a13 13 0 0 0 18 12l146-63a3 3 0 0 0 1-5A197 197 0 0 1 299 660Z"/>
+                    <path class="witchie-logo__dress" fill="#333" d="M326 705h4a13 13 0 0 1 13 13v8a13 13 0 0 0 4 9l13 13a13 13 0 0 1 0 19l-56 56c-10 10-26-0-22-13L314 714A13 13 0 0 1 326 705Zm397-79c-27 0-47 26-37 54 3 7 11 16 17 19a42 42 0 0 0 19 5 38 38 0 0 0 7-1 8 8 0 0 0 6-8v-62a8 8 0 0 0-6-8 38 38 0 0 0-7-1M840 397c-3-15-33-23-77-23a521 521 0 0 0-59 4 5 5 0 0 1-5-2L567 177a8 8 0 0 0-7-4 8 8 0 0 0-8 8l1 227a5 5 0 0 1-4 5c-74 24-123 55-119 76 2 8 11 14 26 18a3 3 0 0 1 1 4l-11 11c-20 20-56 30-92 30-31 0-63-8-84-23a5 5 0 0 0-3-1 5 5 0 0 0-5 5c0 78 68 173 183 173h75a10 10 0 0 0 7-3l38-38a16 16 0 0 0 0-23l-34-34a10 10 0 0 1 0-14l15-15a3 3 0 0 1 5 2v15a5 5 0 0 0 5 5H674a4 4 0 0 0 3-7l-90-90a3 3 0 0 1 1-4c34-19 59-49 67-84a3 3 0 0 1 2-2c6-1 12-1 17-1 22 0 37 5 39 14 1 6 3 11 2 17-5 17 1 31 8 31a6 6 0 0 0 2-0C797 448 845 419 840 397Z"/>
+                  </svg>
+              </div>
+              <div class="showcase-item__text">
+                <h3 class="showcase-item__title">Fizzy School</h3>
+                <p class="showcase-item__description">Lessons in JavaScript for jQuery newbies</p>
+              </div>
+            </a>
+          </li>
+    
+    
+      </ul> 
+    
+      <div class="shirt-promo" data-js="shirt-promo">
+        <a class="shirt-promo__link" href="https://cottonbureau.com/products/refactor">
+          <h3 class="shirt-promo__title">Refactor shirts</h3>
+          <img class="shirt-promo__image" src="https://i.imgur.com/zLv36oi.jpg" alt="Refactor shirt">
+        </a>
+        <p class="shirt-promo__description">Printed on super-soft Next Level t-shirts. Tri-blend Vintage Black or Poly-Cotton Indigo. Available in women&apos;s sizes. Makes a chill gift.</p>
+      </div>
+    
+    </div>
+
+    <p class="site-footer__copy">
+      <a href="https://twitter.com/metafizzyco">
+        <svg class="twitter-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="30" height="30">
+          <path d="M512 97c-19 8-39 14-60 16 22-13 38-34 46-58-20 12-43 21-67 25-19-19-46-32-77-32-58 0-117 52-102 129-87-4-165-46-216-110-24 40-19 107 32 140-17 0-33-5-48-13v1c0 51 36 93 84 103-15 4-34 5-47 2 13 42 52 72 98 73-47 36-96 49-155 44 46 30 102 47 161 47 197 0 306-168 299-312 20-15 38-34 52-55z"/>
+        </svg>
+        Follow @metafizzyco on Twitter for Flickity updates
+      </a>
+    </p>
+
+    <div class="metafizzy-brand">
+      <a class="metafizzy-brand__link" href="http://metafizzy.co">
+        <svg class="metafizzy-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 780 1000" width="78" height="100">
+          <path class="metafizzy-logo__outline" fill="#333" d="M642 31c-49 0-85 29-102 51C528 55 490 2 415 2
+            c-76 0-134 59-137 135c-18 7-62 34-75 43c-20-10-42-16-65-16h0c-68 0-137 53-137 139
+            c0 78 67 133 128 135c11 19 26 42 44 69c1-1-74 46-74 46c-29 19-61 53-61 110
+            c0 75 62 128 129 128c24 0 48-7 68-20l16-10l-23 66C199 917 267 998 350 998
+            c54 0 104-35 122-87l7-20c19-2 37-8 55-18l92-57c25-16 45-39 54-68l46-131
+            c19-54 14-125 1-185c8-16 51-112 51-220C779 58 695 31 642 31z"/>
+          <clippath id="metafizzy-logo__body">
+            <path d="M566 164c-2-34 19-67 54-78c41-13 84 9 97 50c21 67 7 146-13 218
+              C688 310 631 222 566 164z M626 314C567 227 500 155 424 156c-14 0-25-13-25-27
+              c1-14 13-25 27-25c42 1 71 15 73 16l0 0C489 70 426 33 371 66c-36 22-50 65-36 103
+              c-37 11-108 52-132 75c-27-31-73-39-109-17c-41 25-53 78-29 118c20 32 58 47 93 39
+              c15 30 44 74 87 138l-119 74c-36 23-48 71-25 107c25 39 74 45 107 25
+              c23-14 61-38 61-38c-0-4-1-7-1-11c-2-14 7-27 21-30c14-2 27 7 30 21
+              c5 29 1 52-3 62c0 0-22 61-38 111c-18 55 24 103 72 103c30 0 62-17 74-52l60-174
+              c3-7 8-13 16-16c25-9 45-27 45-27c11-10 27-9 36 2c10 11 9 27-2 36
+              c-1 1-22 20-51 33l-29 84l0 0c3-1 5-3 8-4l92-57c15-9 27-24 33-41l46-131
+              C705 521 671 383 626 314z"/>
+          </clippath>
+          <g clip-path="url(#metafizzy-logo__body)">
+            <polygon class="metafizzy-logo__stripe4" fill="#19F" points="1016 544 278 1018 174 837 911 373"/>
+            <polygon class="metafizzy-logo__stripe3" fill="#EA0" points="822 435 174 843 85 695 822 232"/>
+            <polygon class="metafizzy-logo__stripe2" fill="#E62" points="822 238 85 701 74 469 717 65"/>
+            <polygon class="metafizzy-logo__stripe1" fill="#C25" points="717 70 -20 533 -20 299 612 -100"/>
+          </g>
+          <path class="metafizzy-logo__snout" fill="white" d="M474 373c-44 27-66 73-48 103c18 30 70 33 113 5
+            c48-31 66-73 48-103C570 347 519 345 474 373z"/>
+          <path class="metafizzy-logo__eyes-nose" fill="#333" d="M383 383c13 21-15 14-36 27s-28 41-40 20c-13-21-6-49 15-62
+            C343 355 370 362 383 383z M497 260c-21 13-28 41-15 62c13 21 19-7 40-20s49-6 36-27
+            S518 247 497 260z M467 416L467 416c4 6 11 10 18 9l22-2c6-1 12-4 15-9l12-19
+            c4-6 4-14 0-20v0c-6-9-18-12-27-7l-34 21C464 395 461 407 467 416z"/>
+        </svg>
+        <svg class="metafizzy-wordmark" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 300" width="100" height="30">
+          <path fill="#333" d="M491 121c3-9 13-39 13-39h-25c-1 2-2 5-3 8c-23-31-63 7-72 41
+            c-4 10-12 25-23 25c-13 0 0-35 6-56c0 0 0-0 0-0c4-12 11-36 11-36s18 0 24 0
+            c25 0 51 5 71-13l-14-15c-10 8-18 8-27 8c-13 0-48 0-48 0l7-23h-25L380 44h-29L345 65h29
+            c-11 36-16 68-36 82c-14 10-38 17-53 7c19-8 51-21 51-45c0-13-8-29-28-29
+            c-39 0-57 40-57 60c0 25 24 40 49 40c21 0 39-7 54-19c10 25 41 18 54 2
+            c18 25 50 11 58-1c4 8 11 14 25 15l6-21C477 156 488 131 491 121z M301 102
+            c9 0 10 7 8 12c-4 12-20 20-33 26C274 135 285 102 301 102z M443 156c-9 3-14-2-15-11
+            c-3-19 25-60 42-33C464 139 454 152 443 156z M251 188l-15 19c-41-28-34-77-5-137
+            l-50 65l-23-0c-1-18-4-52-8-64C126 150 105 225 49 225c-40 0-75-44-16-95l13 17
+            c-33 28-19 57 2 57c46 0 62-87 87-169c0 0-1-1-1-1c-5 9-15 14-25 13
+            c-11-1-17-11-14-21c3-10 14-18 25-18c15 0 23 1 34 12c14 13 23 50 26 80l63-79l23-0
+            C243 104 211 166 251 188z M649 48c-2 6-11 18-25 18c-14 0-20-11-17-21c3-8 9-14 17-16
+            c-8-9-28-7-38 2c-10 9-14 26-22 52h65l-29 94h-25l22-73h-40c0 0-14 48-22 72
+            c-9 27-34 57-65 59l7-22c16-1 29-25 34-41c4-13 18-58 21-68c-6 0-13 0-19 0l6-21
+            c5 0 12 0 19 0c4-12 7-24 11-36C558 21 583 1 613 1C641 1 656 22 649 48z M727 82h-82
+            l-6 21h47l-62 56l-5 17c39 0 75 9 94-15l-16-14c-11 14-27 10-39 10l64-58L727 82z M998 70
+            c0 38-27 89-102 123C883 238 866 299 804 299c-22 0-41-12-41-36c0-27 23-38 36-46
+            c23-14 50-25 76-36c1-3 2-6 3-9c-16 6-38 3-48-12c-11 8-23 14-35 17
+            c-22 5-57-0-79-0l5-18l61-55h-46l6-21h82l-6 17l-64 58c11 0 22 0 33-1
+            c14-1 31-10 41-26c3-5 16-50 16-50l24 0c0 0-6 22-11 38c-4 13-8 35 8 35
+            c12 0 23-13 26-23c3-10 15-50 15-50l25 0l-26 85c72-42 76-101 64-114c-5 9-15 16-26 14
+            c-11-1-17-11-14-21c3-10 14-18 25-18C988 27 998 53 998 70z M867 206c-21 9-80 32-80 55
+            c0 20 27 18 36 13C846 264 859 241 867 206z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+</footer>
+
+  <script src="js/flickity-docs.min.js?1"></script>
+
+
+</body>
+</html>
