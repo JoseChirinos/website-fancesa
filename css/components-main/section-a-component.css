@@ -1,0 +1,107 @@
+/*
+*
+* ESTILOS DEL SECTION A
+*
+*/
+.sNa{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    background: #f6f6f6;
+}
+.sNa-detail{
+    user-select: none;
+    position: absolute;
+    right: 100px;
+    height: 440px;
+}
+.sNa-detail h2{
+    font-weight: 100;
+    font-size: 3em;
+    text-align: right;
+    line-height: 1;
+}
+/*mapa*/
+#map{
+    position: relative;
+    height: 440px;
+}
+#map svg:not(:root) {
+    overflow: hidden;
+}
+#map svg{
+	width: 390px;
+    height: 450px;
+    position: relative;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+#map svg path{
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+.land{
+    fill: #CCCCCC;
+    fill-opacity: 1;
+    stroke: #FFFFFF;
+    stroke-opacity: 1;
+    stroke-width: 0.8;
+}
+.land:hover{
+    fill: #a2a1a1;
+}
+.land-disabled{
+    fill: #dbdada;
+    stroke: #ffffff;
+}
+.dhover{
+    fill: #be0411 !important;
+    fill-opacity: 0.7 !important;
+    stroke-width: 2px !important;
+    stroke: #fff !important;
+}
+
+/*departamentos*/
+#deps{
+    font-size: 2em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+#deps li{
+        height: 40px;
+}
+#deps li a{
+    display: block;
+    text-decoration: none;
+    color: #9b9898;/*#cecccc;*/
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+#deps li a:hover{
+	font-size: 1.2em;
+	color: #be0411;
+}
+.dep-def li:first-child a{
+    font-size: 1.2em;
+	color: #be0411!important;
+}
+#depbig h1{
+	display: none;
+    font-size: 35px;
+    text-align: right;
+    color: #be0411;
+    margin-top: 120px;
+}

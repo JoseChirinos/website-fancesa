@@ -1,0 +1,54 @@
+/*
+*
+* ESTILOS DEL HEADER
+*
+*/
+.header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../../images/pack-presentation-red.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    overflow: hidden;
+}
+.pack-header{
+    position: relative;
+}
+.pack-fancesa{
+    opacity: 0;
+}
+.pack-fancesa img{
+    transform: translateY(50px);
+}
+.pack-fancesa, .pack-fancesa img{
+    width: 400px;
+    height: 625px;
+}
+.pack-fancesa{
+    display: inline-block;
+    position: relative;
+    -webkit-transition: .0001s easeOutSine;
+    -moz-transition:.0001s easeOutSine;
+    -ms-transition:.0001s easeOutSine;
+    -o-transition:.0001s easeOutSine;
+    transition: .0001s easeOutSine;
+}
+.header h2{
+    position: relative;
+    color: #fff;
+    font-size: 3.5em;
+    font-weight: 100;
+    line-height: 1.2;
+    top: 50px;
+    user-select: none;
+    cursor: default;
+}
+/* figure header */
+.figureHeader{
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    fill: #f6f6f6;
+}

@@ -90,7 +90,9 @@ var menuCommon = {
             i.onmouseenter = function() {
                 var a = i.children[0];
                 self.bar.style.width = a.offsetWidth+'px';
+                console.warn('OffsetWidth: ',a.offsetWidth);
                 self.bar.style.transform = "translate3d("+ (a.offsetLeft - 15) +'px,'+' 0px, 0px)';
+                console.warn('OffsetWidth: ',a.offsetLeft);
             }
         });
         this.ulElem.onmouseleave = function(){
@@ -98,7 +100,7 @@ var menuCommon = {
         };
     },
     reOrderSub: function(){
-        console.log(typeof this.ulElem.children);
+        //console.log(typeof this.ulElem.children);
         [].forEach.call(this.ulElem.children,function(i){
             var a = i.children[0];
             if(typeof i.children[1]!== 'undefined'){
@@ -107,7 +109,8 @@ var menuCommon = {
         });
     },
     initMenu: function(){
-        var on = document.querySelector('.on').children[0];
+        var on = document.querySelector('.on').children[0];        
+//        console.log('Offset elegido:> ',on);
         if(this.bar!==null){
             this.bar.style.width = on.offsetWidth+'px';
             this.bar.style.transform = "translate3d("+ (on.offsetLeft - 15) +'px,'+' 0px, 0px)';
@@ -115,8 +118,21 @@ var menuCommon = {
     },
     isTop:true,
 };
+
+function init(){
+    // Iniciar el menu
+    menuCommon.init();
+    menuCommon.initMenu();
+}
+(function(env){
+    env.onload = function(){
+        console.log('ya se cargo el sitio web');
+        init();
+    }
+})(window);
+
 /*functions for maps by Jose Chirinos*/
-(function(){
+(function(env){
     var deps = document.querySelector('#deps');
     var urls = [];
     /* valores generales */
@@ -155,12 +171,9 @@ var menuCommon = {
     };
     def.on();
 })(window);
+
 /*event scroll by Jose Chirinos*/
 (function(env){
-    /* iniciar menu */
-    menuCommon.init();
-    menuCommon.initMenu();
-
     var header = document.querySelector('.header').offsetTop - 50;
     var sa = document.querySelector('.sNa').offsetTop - 50;
     var sb = document.querySelector('.sNb').offsetTop - 50;
@@ -171,14 +184,12 @@ var menuCommon = {
     var top = document.querySelector('.upbottom');
 
     /*var for animate pack*/
-    var packHeader = document.querySelector('.pack-fancesa-top');
+    var packHeader = document.querySelector('.pack-fancesa');
     /*end*/
 
     env.onscroll = function(){
         if(window.scrollY>header && window.scrollY<sa){
-            var sh = 50 - window.scrollY*0.5;
-            /*console.log(sh);*/
-            /*console.log(packHeader.children[0]);*/
+            var sh = 50 - window.scrollY*0.3;
             packHeader.children[0].style.transform = 'translateY('+sh+'px)';
         }
         if(window.scrollY > sa-100){
@@ -196,8 +207,7 @@ var menuCommon = {
                 menu.style.background = 'rgba(0, 0, 0, 0.9)';
                 [].forEach.call(document.querySelectorAll('.menu a'),function(i){
                     i.style.color = '#fff';
-                });
-                //document.querySelector('.bar').style.background = '#fff';
+                });                
                 menuCommon.reOrderSub();
                 menuCommon.initMenu();
                 menuCommon.isTop = false;
@@ -224,5 +234,4 @@ var menuCommon = {
         }
         
     }
-
 })(window);

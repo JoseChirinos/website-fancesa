@@ -12,9 +12,97 @@
         img{
             width: 100%;
         }
+        #svg{
+            width: 100%;
+            height: 450px;
+        }
+
+        #svgTest{
+            width: 100%;
+            height: 800px;
+        }
+
+        #svgTest image{
+            height: 36vh;
+            y: -3vh;
+        }
+        .mi-mask{
+            width: 500px;
+            height: 250px;
+            /*background: red;*/
+                -webkit-mask: url(../images/forma-background-01.svg) top right / 100% 100%;
+                /*background-image: inline("../images/fancesa-header_background-desktop-min.jpg");*/
+                background-image: url("../images/fancesa-header_background-desktop-min.jpg");
+        }
     </style>
 </head>
 <body>
+    <!-- image large-->
     <img src="images/preview-fancesa-official-2.jpg" alt="">
+    <!-- SVG preview
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M 0 0 c 0 20 100 20 100 0 v 100 c 0 -20 -100 -20 -100 0 z"></path>
+    </svg>
+    
+    <!-- DIV with mask
+    <div class="mi-mask">
+    </div>
+    -->
+
+    <!-- SVG with image 
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none">
+        <defs>
+
+            <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/fancesa-header_background-desktop-min.jpg" preserveAspectRatio="none" x="0" y="0" width="100" height="100"/>
+            </pattern>
+        </defs>
+    </svg>
+
+    -->
+    
+    <!---->
+    <svg id="svgTest" version="1" xmlns="http://www.w3.org/2000/svg" width="400" height="222" viewBox="0 0 400 222" preserveAspectRatio="none">
+        <defs>
+
+            <pattern id="img1" patternUnits="userSpaceOnUse" width="400" height="222">
+                <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/new-fancesa-header_background-desktop-min.jpg" preserveAspectRatio="none" x="0" y="0" width="400" height="222"/>
+            </pattern>
+        </defs>
+      <path fill="url('#img1')" d="M201 188.7c69.8 0 136.8 11.3 199 33.3V0c-62.2 22-129.2 34.7-199 34.7C130.5 34.7 62.8 22.5 0 0v222c62.3-22 131.2-33.3 201-33.3z"/>
+    </svg>
+
+    
+
+        
+    <!--
+    <svg version="1" xmlns="http://www.w3.org/2000/svg" width="400" height="222" viewBox="0 0 400 222">
+  <path stroke="#211915" stroke-miterlimit="10" d="M201 188.7c69.8 0 136.8 11.3 199 33.3V0c-62.2 22-129.2 34.7-199 34.7C130.5 34.7 62.8 22.5 0 0v222c62.3-22 131.2-33.3 201-33.3z"/>
+</svg>
+-->
+
+<!-- svg hacia abajo -->
+<style type="text/css">
+    #svg{
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        fill: #f6f6f6;
+    }
+</style>
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path d="M0 0 C 50 100 50 100 100 0 L100 100 L0 100Z"></path>
+</svg>
+
+<style type="text/css">
+    #svg2{
+        fill: #f6f6f6;
+        background: transparent;
+        position: absolute;
+    }
+</style>
+<svg id="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C40 0 60 0 100 100 L100 100 L100 0 L0 0Z"></path>
+    </svg> 
 </body>
 </html>

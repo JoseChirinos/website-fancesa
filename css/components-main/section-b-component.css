@@ -1,0 +1,39 @@
+/*
+*
+* ESTILOS DEL SECTION B
+*
+*/
+.sNb{
+    padding-top: 0px;
+    padding-bottom: 40px;
+    background: #f6f6f6;
+}
+.sNb-detail a{
+    display: inline-block;
+    position: relative;
+    background: rgba(45, 45, 45, 0.85);
+    color: #FFFFFF;
+    padding: 4px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 15px;
+    text-decoration: none;
+    transition: all 0.2s;
+    transition-property: background,color;
+}
+.sNb-detail a:hover{
+    background: rgba(190, 4, 17, 0.86)!important;
+    color: #fff;
+}
+#pointer{
+    position: relative;
+    margin: 0 auto;
+    width: 34px;
+    height: 50px;
+    background: url(../../images/pointer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
