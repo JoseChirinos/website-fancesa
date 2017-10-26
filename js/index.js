@@ -1,6 +1,6 @@
 /* code © 2017 - Jose Chirinos */
 /* var global */
-var consulta = window.matchMedia('(max-width: 768px)');
+var consulta = window.matchMedia('(max-width: 885px)');
 function scrollToTop(scrollDuration) {
     var cosParameter = window.scrollY / 2,
         scrollCount = 0,
@@ -14,6 +14,12 @@ function scrollToTop(scrollDuration) {
         window.requestAnimationFrame(step);
     }
     window.requestAnimationFrame(step);
+}
+
+document.body.onresize = function(){
+    if(consulta.matches){
+        
+    }
 }
 /* Pollyfill for ie*/
 if (!Array.prototype.forEach) {
@@ -126,7 +132,6 @@ function init(){
 }
 (function(env){
     env.onload = function(){
-        console.log('ya se cargo el sitio web');
         init();
     }
 })(window);
@@ -150,6 +155,28 @@ function init(){
     window.link = function(url){
         window.location.href = url;
     }
+
+    /* user experience in the map */
+    document.querySelector('#map').onmouseenter = function(){
+        document.querySelector('.ch').setAttribute('class','land ch');
+    }
+    document.querySelector('#map').onmouseleave = function(){
+        document.querySelector('.ch').setAttribute('class','land ch dhover');
+        document.getElementById('deps').style.display = "block";
+        document.getElementById('depbig').children[0].style.display = "none";
+    }
+    /*functions*/
+    var paths = document.querySelector('#paths');
+    [].forEach.call(paths.children,function(i){
+       i.onmouseover = function(){
+        var nameid = i.getAttribute('class').split(' ')[1];
+        var txt = document.getElementById(nameid).textContent;
+        document.getElementById('depbig').children[0].textContent = txt;
+        document.getElementById('deps').style.display = "none";
+        document.getElementById('depbig').children[0].style.display = "block";
+       }
+    });
+
     /* valor por defecto */
     var def = {
         elem: document.querySelector('#deps'),

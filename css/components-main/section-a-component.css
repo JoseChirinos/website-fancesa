@@ -8,19 +8,24 @@
     padding-top: 40px;
     padding-bottom: 40px;
     overflow: hidden;
-    background: #f6f6f6;
+    background: #e9eaeb;
+}
+.sNa-title{
+    color: #000000;
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+}
+.sNa .map-container{
+    padding-top:25px;
 }
 .sNa-detail{
     user-select: none;
     position: absolute;
     right: 100px;
     height: 440px;
-}
-.sNa-detail h2{
-    font-weight: 100;
-    font-size: 3em;
-    text-align: right;
-    line-height: 1;
 }
 /*mapa*/
 #map{
@@ -31,7 +36,7 @@
     overflow: hidden;
 }
 #map svg{
-	width: 390px;
+	width: 350px;
     height: 450px;
     position: relative;
     -webkit-transition: all 0.5s ease-out;
@@ -56,7 +61,7 @@
     stroke-width: 0.8;
 }
 .land:hover{
-    fill: #a2a1a1;
+    fill: #be0411;
 }
 .land-disabled{
     fill: #dbdada;
@@ -70,12 +75,17 @@
 }
 
 /*departamentos*/
+.dep-def li:first-child a{
+    font-size: 1.2em;
+    color: #be0411!important;
+}
 #deps{
     font-size: 2em;
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: right;
+    margin-top: 100px;
 }
 #deps li{
         height: 40px;
@@ -94,14 +104,10 @@
 	font-size: 1.2em;
 	color: #be0411;
 }
-.dep-def li:first-child a{
-    font-size: 1.2em;
-	color: #be0411!important;
-}
 #depbig h1{
 	display: none;
     font-size: 35px;
     text-align: right;
     color: #be0411;
-    margin-top: 120px;
+    margin-top: 200px;
 }

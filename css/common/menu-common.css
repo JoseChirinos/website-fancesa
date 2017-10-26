@@ -59,7 +59,7 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width:768px) {
+@media screen and (max-width:885px) {
     .menu-icon-wrapper{
         display: inline-block;    
     }
@@ -109,9 +109,10 @@
     cursor: pointer;
 }
 .menu-bottom a{
+    font-family: 'Poppins';
     color: #FFFFFF;
-    font-weight: 100;
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: bold;
     text-decoration: none;
 }
 .menu-bottom ul li > ul{
@@ -159,7 +160,7 @@
 *   Responsive Design
 *
 */
-@media screen and (max-width:768px) {
+@media screen and (max-width:885px) {
     /* nav */
     .menu-top{
         display: block;
@@ -210,19 +211,5 @@
     .inside ul li a{
         font-size: 2em;
         color: #000!important;
-    }
-}
-@media screen and (max-width:768px) {
-    /* header */
-    .space{
-        height: 40px;
-    }
-    .header h2{
-        font-size: 3.1em;
-        top: 20px;
-    }
-    .pack-fancesa-top, .pack-fancesa-top img {
-        width: 250px;
-        height: 390px;
     }
 }

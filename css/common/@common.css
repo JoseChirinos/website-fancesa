@@ -11,6 +11,12 @@ body{
 .space{
     height: 76px;
 }
+/* botton line*/
+.down-line{
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
 /* botton go to top*/
 .upbottom{
     position: fixed;

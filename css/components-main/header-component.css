@@ -50,5 +50,18 @@
     position: absolute;
     bottom: -1px;
     left: 0px;
-    fill: #f6f6f6;
+    fill: #e9eaeb;
+}
+@media screen and (max-width: 885px){
+    .space{
+        height: 40px;
+    }
+    .header h2{
+        font-size: 3.1em;
+        top: 20px;
+    }
+    .pack-fancesa, .pack-fancesa img {
+        width: 250px;
+        height: 390px;
+    }
 }

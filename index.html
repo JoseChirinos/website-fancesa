@@ -9,9 +9,8 @@
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Construye con el mejor cemento de Bolivia, la calidad y el precio nos distinguen."/>
     <!-- Styles for production
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Passion+One" rel="stylesheet">
-    -->
-    
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
+    -->    
     <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -174,16 +173,25 @@
             <path d="M0 0 C 50 100 50 100 100 0 L100 100 L0 100Z"></path>
         </svg>
     </header>
-
     <!-- Section A -->
     <section class="container-fluid sNa">
         <div class="row">
+            <article class="col-lg-12 col-md-12">
+                <h2 class="sNa-title">
+                    Distribuidoras en Bolivia
+                </h2>
+                <svg class="down-line" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 600 100">
+                    <g>
+                        <line x1="0" y1="50" x2="600" y2="50" stroke="#be0411" stroke-width="10"/>
+                        <circle r="30" cx="300" cy="50" fill="#e9eaeb" stroke="#be0411" stroke-width="10"/>
+                        <circle r="15" cx="300" cy="50" fill="#be0411"/>
+                    </g>
+                </svg>
+            </article>
+        </div>
+        <div class="row map-container">
             <article class="col-lg-6 col-md-6">
                 <div class="sNa-detail wew fadeInUp" data-wew-offset="0.4">
-                    <h2>
-                        Distribuidoras de<br>
-                        <small>Cemento en Bolivia</small>
-                    </h2>
                     <div id="depbig">
                         <h1></h1>
                     </div>
@@ -365,7 +373,6 @@
             handleComplete: function(){
                 document.querySelector('.loader').setAttribute('class','loader animated fadeOut');
                 /* End Code */
-                console.log('ya se cargo todo');
                 setTimeout(function(){
                     document.querySelector('.pack-fancesa').setAttribute('class','pack-fancesa animated fadeInUp');
                 },500);

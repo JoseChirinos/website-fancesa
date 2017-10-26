@@ -73,12 +73,12 @@ function Segment(t,e,n){this.path=t,this.length=t.getTotalLength(),this.path.sty
 	wrapper.style.visibility = 'visible';
 	trigger.onclick = function() {
 		if (toCloseIcon) {
-			console.log('open');
+			document.querySelector('.menu-bottom').style.display = "block";
 			inAC(segmentA);
 			inB(segmentB);
 			inAC(segmentC);
 		} else {
-			console.log('close');
+			document.querySelector('.menu-bottom').style.display = "none";
 			outAC(segmentA);
 			outB(segmentB);
 			outAC(segmentC);
