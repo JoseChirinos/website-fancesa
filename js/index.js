@@ -21,20 +21,19 @@
 
     /* Menu Bar */
     var menuCommon = {
-        responsive:false,
         inside: null,
         bar: null,
         ulElem: null,
-        sizeUL: null,
+        responsive:false,
+        isTop:true,
+        /*Inicializar todo menu con posiciones(bar y submenus)*/
         init: function(){
+            this.renew();
             this.inside = document.querySelector('.inside');
             this.bar = document.querySelector('.bar');
             this.ulElem = this.inside.children[0];
-            var sizeUL = this.ulElem.clientWidth;
-            /* add event hover */
             var self = this;
-            /* order sub-menus */
-            this.reOrderSub();
+            /* add event hover in li*/
             [].forEach.call(this.ulElem.children,function(i){
                 i.onmouseenter = function() {
                     var a = i.children[0];
@@ -44,12 +43,30 @@
                     console.warn('OffsetWidth: ',a.offsetLeft);
                 }
             });
+            /* inicializar el bar y submenus*/
+            this.reset();
             this.ulElem.onmouseleave = function(){
-                self.initMenu();
+                self.orderBarMenu();
             };
         },
-        reOrderSub: function(){
-            //console.log(typeof this.ulElem.children);
+        /*Inicializar todo menu Responsive*/
+        initResponsive:function(){
+            this.renew();
+            this.inside = document.querySelector('.inside');
+            this.ulElem = this.inside.children[0];
+            [].forEach.call(this.ulElem.children,function(i){
+                i.onclick = function() {
+                    console.log('hola');
+                }
+            });
+        },
+        /* Inicializar Posiciones (bar y submenus)*/
+        reset:function(){
+            this.orderBarMenu();
+            this.orderSubMenu();
+        },
+        /* Ordenar posiciones de submenus*/
+        orderSubMenu: function(){
             [].forEach.call(this.ulElem.children,function(i){
                 var a = i.children[0];
                 if(typeof i.children[1]!== 'undefined'){
@@ -57,14 +74,25 @@
                 }
             });
         },
-        initMenu: function(){
+        /* Mover posicion (bar)*/
+        orderBarMenu: function(){
             var on = document.querySelector('.on').children[0];
             if(this.bar!==null){
                 this.bar.style.width = on.offsetWidth+'px';
                 this.bar.style.transform = "translate3d("+ (on.offsetLeft - 15) +'px,'+' 0px, 0px)';
             }
         },
-        isTop:true,
+        renew:function(){
+            if(this.ulElem!=null){
+                [].forEach.call(this.ulElem.children,function(i){
+                    i.onmouseenter = null;
+                    i.onclick = null;
+                });
+            }
+            this.inside = null;
+            this.bar = null;
+            this.ulElem = null;
+        }
     };
     function onEvents(){
         btnScroll.onclick = function(){
@@ -89,9 +117,9 @@
         document.body.onresize = function(){
             if(consulta.matches){
                 if(!menuCommon.responsive){
-                    console.log('tamaño pequeño: ',menuCommon.responsive);
+                    // Mobiles
                     if(window.scrollY>document.querySelector('.sNa').offsetTop - 150){
-                    menuTop.style.display = 'block';                        
+                        menuTop.style.display = 'block';                        
                     }
                     if(toggle.getAttribute('data-toggle') === 'open'){
                         menuBotton.style.display = "block";
@@ -100,12 +128,13 @@
                         menuBotton.style.display = "none";
                     }
                     menuCommon.responsive = true;
+                    menuCommon.initResponsive();
                     document.querySelector('#logo-nav').style.display = 'inline-block';
                 }
             }
             else{
                 if(menuCommon.responsive){
-                    console.log('tamaño grande: ',menuCommon.responsive);
+                    // Tablets & Desktops
                     if(window.scrollY>document.querySelector('.sNa').offsetTop - 150){
                         document.querySelector('#logo-nav').style.display = 'inline-block';
                         menuTop.style.display = 'none';
@@ -117,9 +146,9 @@
                     menuBotton.className = menuBotton.className.split('animated fadeOut')[0];
                     document.body.style.overflow = "auto";
                     menuCommon.responsive = false;
+                    menuCommon.init();
                 }
-                menuCommon.reOrderSub();
-                menuCommon.initMenu();
+                menuCommon.reset();
             }
         }
     }
@@ -264,8 +293,7 @@
                     [].forEach.call(document.querySelectorAll('.menu a'),function(i){
                         i.style.color = '#fff';
                     });                
-                    menuCommon.reOrderSub();
-                    menuCommon.initMenu();
+                    menuCommon.reset();
                     menuCommon.isTop = false;
                 }
             }
@@ -285,13 +313,15 @@
                         i.style.color = '#FFFFFF';
                     });
                     //document.querySelector('.bar').style.background = '#be0411';
-                    menuCommon.reOrderSub();
-                    menuCommon.initMenu();
+                    menuCommon.reset();
                     menuCommon.isTop = true;
                 }
             }
             
         }
+    }
+    function onMenu(){
+        console.log(menuCommon.inside.children[0].children);
     }
 
     /* function initial */
@@ -301,14 +331,18 @@
         onSupportIE();
         onResponsive();
         onEvents();
-        menuCommon.init();
-        menuCommon.initMenu();
         if(!phone.matches){
-            // Desktop and Tablets
-            onMap();
+            // Desktop and Tablet
+            onMap();        
         }
-
-        //onMap();
+        if(consulta.matches){
+            // Mobiles
+            menuCommon.initResponsive();
+        }
+        else{
+            // Desktop and Tablet
+            menuCommon.init();
+        }
         onScroll();
     }
 })(window);

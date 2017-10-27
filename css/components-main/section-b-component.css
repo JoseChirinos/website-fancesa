@@ -6,6 +6,7 @@
 .sNb{
     padding-top: 0px;
     background: #eaebec;
+    padding-bottom: 30px;
 }
 
 /*
@@ -27,15 +28,15 @@
     transition: all 0.2s ease;
     transition-property: background,color;
 }
-.btn:hover{
+.btn:hover, .btn:focus{
     color: #fff;
     background: #be0411;
     border: 1.2px solid transparent;
 }
+.btn:focus{
+    outline: none;
+}
 .sNb-detail a:hover{
     background: rgba(190, 4, 17, 0.86)!important;
     color: #fff;
-}
-.sNc{
-    height: 250px;
 }
