@@ -61,6 +61,12 @@
         top: 20px;
     }
     .pack-fancesa, .pack-fancesa img {
+        width: 320px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 768px){
+    .pack-fancesa, .pack-fancesa img {
         width: 250px;
         height: 390px;
     }

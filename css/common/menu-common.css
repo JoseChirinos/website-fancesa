@@ -145,6 +145,7 @@
     margin-right: 100px;
 }
 .bar {
+    display: block;
     position: absolute;
     top: 37.2px;
     height: 3px;
@@ -232,6 +233,12 @@
     }
     .menu-bottom ul li > ul li {
         display: list-item;
+    }
+    .menu-bottom ul li:hover ul{
+        display: none;
+    }
+    .bar{
+        display: none;
     }
     .on{
         border-left: 20px solid #ad3737;
