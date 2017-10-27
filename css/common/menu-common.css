@@ -4,7 +4,7 @@
 *
 */
 .menu-icon-wrapper {
-	position: absolute;
+	position: fixed;
     right: 12px;
     top: 0;
     display: none;
@@ -172,44 +172,70 @@
         height: 24px;
     }    
     .menu-bottom{
-        padding: 0;
-    }
-    .menu-bottom{
         display: none;
+        padding: 0;
+        overflow-y: auto;
     }
     #logo-nav{
         display: inline-block;
         text-align: center;
         width: 100%;
         padding: 0;
-        padding-top: 25px;
-        padding-bottom: 45px;
+        padding-top: 16px;
+        padding-bottom: 48px;
         line-height: 0;
         margin: 0;
+        /*margin-bottom:20px;*/
+        background: #000;
     }
     #logo-nav img{
-        width: 100px;
-        height: 25px;
+        width: 130px;
+        height: 33px;
         margin: 0;
     }
-    .inside ul{
+    .menu-bottom ul{
         position: fixed;
         width: 100%;
         height: 110vh;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(0, 0, 0, 0.96);
         top: 0;
         left: 0;
+        overflow: auto;
     }
-    .inside ul li{
+    .menu-bottom ul li{
         display: block;
+        height: auto;
         padding: 30px 0px;
         padding-left: 40px;
         text-align: left;
         line-height: 0;
-        border-bottom: 1px solid #dbdbdb;
+        margin-left: 0px;
+        border-bottom: 1px solid #222222;
     }
-    .inside ul li a{
-        font-size: 2em;
-        color: #000!important;
+    .menu-bottom ul li a{
+        font-size: 1.5em;
+        color: #fff!important;
+    }
+
+    .menu-bottom ul li > ul{
+        display: none;
+        background: transparent;
+        position: relative;
+        top: 20px;
+        height: auto;
+        padding: 0px;
+        left: 0!important;
+        text-align: left;
+        z-index: 5;
+        border-left: 1px solid #be0211;
+        font-size: 0.6em;
+    }
+    .menu-bottom ul li > ul li {
+        display: list-item;
+    }
+    .on{
+        border-left: 20px solid #ad3737;
+        background: rgba(187, 2, 16, 1);
+        padding-left: 20px!important;
     }
 }

@@ -68,17 +68,26 @@ function Segment(t,e,n){this.path=t,this.length=t.getTotalLength(),this.path.sty
 		segmentB = new Segment(pathB, beginB, endB),
 		segmentC = new Segment(pathC, beginAC, endAC),
 		trigger = document.getElementById('menu-icon-trigger'),
+		menuBotton = document.querySelector('.menu-bottom'),
 		toCloseIcon = true,
 		wrapper = document.getElementById('menu-icon-wrapper');
 	wrapper.style.visibility = 'visible';
 	trigger.onclick = function() {
 		if (toCloseIcon) {
-			document.querySelector('.menu-bottom').style.display = "block";
+			menuBotton.style.display = "block";
+			document.body.style.overflow = "hidden";
+			this.setAttribute('data-toggle','open');
+			menuBotton.className = menuBotton.className.split('animated fadeOut')[0];
+			menuBotton.className = menuBotton.className + " animated fadeIn";
 			inAC(segmentA);
 			inB(segmentB);
 			inAC(segmentC);
 		} else {
-			document.querySelector('.menu-bottom').style.display = "none";
+			//menuBotton.style.display = "none";
+			document.body.style.overflow = "auto";
+			this.setAttribute('data-toggle','close');
+			menuBotton.className = menuBotton.className.split('animated fadeIn')[0];
+			menuBotton.className = menuBotton.className + " animated fadeOut";
 			outAC(segmentA);
 			outB(segmentB);
 			outAC(segmentC);

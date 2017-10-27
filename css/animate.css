@@ -1219,6 +1219,7 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    display: block;
   }
 
   to {
@@ -1508,12 +1509,13 @@
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
-    visibility: visible;
+    /*visibility: visible;*/
   }
 
   to {
     opacity: 0;
-    visibility: hidden;
+    display: none;
+    /*visibility: hidden;*/
   }
 }
 
